@@ -1,0 +1,72 @@
+@use 'theme';
+
+.PrimaryNav {
+  display: none;
+}
+
+@media (min-width: theme.$mdMin) {
+  .PrimaryNav {
+    background-color: theme.$blue;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 10px 6px;
+    position: absolute;
+    width: 70px;
+  }
+
+  .PrimaryNav__hasAlert {
+    height: calc(100vh - 33px);
+  }
+
+  .PrimaryNav_navBar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .PrimaryNav_navItem {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    height: 56px;
+    outline: none;
+    padding: 14px;
+    position: relative;
+    width: 56px;
+  }
+
+  .PrimaryNav_navItem__logo {
+    cursor: default;
+    margin-bottom: 5px;
+  }
+
+  .PrimaryNav_logoIcon {
+    fill: theme.$white;
+    width: 27px;
+  }
+
+  .PrimaryNav_navItemIcon {
+    fill: theme.$lightBlue300;
+    position: relative;
+    transition: var(--transition);
+
+    :global(.uMouse) &:not(.PrimaryNav_navItemIcon__isActive):hover {
+      fill: theme.$white;
+    }
+  }
+
+  .PrimaryNav_navItemIcon__isActive {
+    fill: theme.$blue;
+  }
+
+  .PrimaryNav_activeTabBg {
+    fill: theme.$white;
+    height: 82px;
+    left: -2px;
+    position: absolute;
+    top: -12px;
+    width: 69px;
+  }
+
+}

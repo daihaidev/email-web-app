@@ -1,0 +1,14 @@
+@use 'theme';
+@use 'mixins';
+
+.DropdownItemExtended {
+  display: flex;
+  justify-content: space-between;
+
+  small {
+    color: theme.$darkGrey200;
+    font-size: 12px;
+    margin-left: 50px;
+    white-space: nowrap;
+  }
+}

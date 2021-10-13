@@ -1,0 +1,47 @@
+@use 'theme';
+
+.MultiEmailInput {
+  color: theme.$darkGrey;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.MultiEmailInput_input {
+  border: 0;
+  color: theme.$darkGrey;
+  flex-grow: 1;
+  height: 28px;
+  outline: none;
+  padding: 0;
+}
+
+.MultiEmailInput_mail {
+  border-radius: 6px;
+  height: 28px;
+  padding: 0 9px;
+  position: relative;
+  transition: background-color var(--transition);
+
+  &:hover {
+    background-color: theme.$lightGrey200;
+    /* stylelint-disable */
+    .MultiEmailInput_delete {
+      opacity: 1;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.MultiEmailInput_delete {
+  background-color: theme.$lightGrey200;
+  height: 28px;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity var(--transition);
+  width: 28px;
+}

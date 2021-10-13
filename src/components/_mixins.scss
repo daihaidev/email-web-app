@@ -1,0 +1,245 @@
+@use 'theme';
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin centerAbs {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin centerAbsVertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin withStyledScrollbar {
+  color: theme.$lightGrey;
+  overflow: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-color: theme.$lightGrey transparent;
+  scrollbar-width: thin;
+  transition: var(--transition) ease;
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 2px;
+  }
+
+  // scrollbar visible all the time, not just on hover
+  // &:hover {
+  //   color: theme.$lightGrey;
+  //   scrollbar-color: theme.$lightGrey transparent;
+  //   scrollbar-width: thin;
+
+  //   @media not all and (min-resolution:0.001dpcm) {
+  //     @supports (-webkit-appearance:none) {
+  //       &::-webkit-scrollbar-thumb {
+  //         color: theme.$lightGrey;
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+
+@mixin noticeBox {
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  padding: 14px 18px;
+}
+
+@mixin urgent {
+  @include noticeBox();
+  background-color: theme.$red200;
+  color: theme.$red;
+
+  a {
+    color: theme.$red;
+  }
+}
+
+@mixin important {
+  @include noticeBox();
+  background-color: theme.$orange200;
+  color: theme.$orange;
+
+  a {
+    color: theme.$orange;
+  }
+}
+
+@mixin success {
+  @include noticeBox();
+  background-color: theme.$green200;
+  color: theme.$green;
+
+  a {
+    color: theme.$green;
+  }
+}
+
+@mixin notice {
+  @include noticeBox();
+  background-color: theme.$blue200;
+  color: theme.$blue;
+
+  a {
+    color: theme.$blue;
+  }
+}
+
+
+@mixin scrollbarHidden {
+  -ms-overflow-style: none;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin backgroundOpacity($color, $opacity: 0.1) {
+  background: $color;
+  background: rgba($color, $opacity);
+  transition: var(--transition);
+
+  :global(.uMouse) &:hover {
+    background: rgba($color, 0.2);
+  }
+}
+
+@mixin inputField {
+  background-color: theme.$white;
+  border: 1px solid theme.$inputBorder;
+  border-radius: 6px;
+  color: theme.$darkGrey;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  width: 100%;
+
+  :global(.uMouse) &:hover {
+    box-shadow: 0 0 4px rgba(theme.$darkGrey, 0.15);
+  }
+
+  &:focus {
+    border: 1px solid #9aa7b2;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+@mixin textareaCorner {
+  @include pseudo;
+  border-radius: 3px 0 0;
+  border-right: 12px solid theme.$white;
+  border-top: 12px solid theme.$lightGrey400;
+  bottom: 0;
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+@mixin truncateText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin shadow($height: 8px) {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: $height;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    transition: var(--transition);
+  }
+  /* stylelint-disable */
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+  /* stylelint-enable */
+
+  &::before {
+    background: linear-gradient(to bottom, rgba(theme.$darkGrey, 0) 33%, rgba(theme.$darkGrey, 0.06) 100%);
+    top: -$height;
+  }
+
+  &::after {
+    background: linear-gradient(to top, rgba(theme.$darkGrey, 0) 33%, rgba(theme.$darkGrey, 0.06) 100%);
+    bottom: -$height;
+  }
+}
+
+// Button types mixins
+
+@mixin default() {
+  //background-color: theme.$white;
+  color: theme.$darkGrey400;
+}
+
+@mixin defaultHover() {
+  background-color: theme.$lightGrey200;
+  color: theme.$darkGrey600;
+}
+
+@mixin primary() {
+  background-color: theme.$blue;
+  color: theme.$white;
+}
+
+@mixin primaryHover() {
+  background-color: theme.$blue800;
+  color: theme.$white;
+}
+
+@mixin primaryText() {
+  background-color: theme.$white;
+  color: theme.$blue;
+}
+
+@mixin primaryTextHover() {
+  background-color: theme.$lightBlue200;
+  color: theme.$blue;
+}
+
+@mixin alertText() {
+  background-color: theme.$red;
+  color: theme.$white;
+}
+
+@mixin alertTextHover() {
+  background-color: theme.$red600;
+  color: theme.$white;
+}
+
+
+

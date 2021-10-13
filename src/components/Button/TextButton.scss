@@ -1,0 +1,15 @@
+@use 'theme';
+
+.TextButton {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 11px;
+}
+
+.TextButton__isDisabled {
+  color: theme.$lightGrey800;
+}
+
+.TextButton__large {
+  padding: 0 16px;
+}

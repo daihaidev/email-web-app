@@ -1,0 +1,73 @@
+@use 'theme';
+@use 'mixins';
+
+.MultiCollapseButton {
+  cursor: pointer;
+  padding: 0 24px;
+  position: relative;
+  margin-top: -1px;
+
+  &::before,
+  &::after {
+    border-bottom: 1px solid theme.$divider;
+    content: '';
+    display: block;
+    left: 24px;
+    position: absolute;
+    right: 24px;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  :global(.uMouse) &:hover {
+    z-index: theme.$zIndexMessageHover;
+    /* stylelint-disable */
+    :global(.uBottomShadow) {
+      display: block;
+    }
+    :global(.uTopShadow) {
+      display: block;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.MultiCollapseButton_block {
+  background-color: theme.$white;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.MultiCollapseButton_text {
+  color: theme.$darkGrey200;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  position: relative;
+
+  &::before,
+  &::after {
+    @include mixins.pseudo;
+    background-color: theme.$divider;
+    height: 1px;
+    top: 12px;
+    width: 50vw;
+  }
+
+  &::before {
+    left: -20px;
+    transform: translate(-100%, 0);
+  }
+
+  &::after {
+    right: -20px;
+    transform: translate(100%, 0);
+  }
+}

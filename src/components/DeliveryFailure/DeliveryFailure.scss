@@ -1,0 +1,41 @@
+@use 'theme';
+@use 'mixins';
+
+.DeliveryFailure {
+  @include mixins.urgent();
+  align-items: center;
+  display: flex;
+}
+
+.DeliveryFailure_content {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.DeliveryFailure_actions {
+  display: flex;
+  margin-left: auto;
+  width: 105px;
+}
+
+.DeliveryFailure_button {
+  background-color: transparent;
+  margin-right: 12px;
+
+  :global(.uMouse) &:hover {
+    background-color: transparent;
+  }
+}
+
+.DeliveryFailure_buttonIcon {
+  fill: theme.$red;
+
+  :global(.uMouse) &:hover {
+    fill: theme.$red;
+  }
+}
+
+.DeliveryFailure_title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}

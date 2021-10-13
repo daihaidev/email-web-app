@@ -1,0 +1,41 @@
+@use 'theme';
+
+.RecentTicketsSidebarApp {
+  padding-bottom: 10px;
+}
+
+.RecentTicketsSidebarApp_item {
+  position: relative;
+  padding: 6px 12px 6px 28px;
+  transition: var(--transition);
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 -8px;
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+  }
+}
+
+.RecentTicketsSidebarApp_itemIcon {
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  fill: theme.$darkGrey600;
+}
+
+.RecentTicketsSidebarApp_itemTitle {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  color: theme.$darkGrey;
+}
+
+.RecentTicketsSidebarApp_itemDate {
+  font-size: 12px;
+  line-height: 16px;
+  color: theme.$darkGrey200;
+}

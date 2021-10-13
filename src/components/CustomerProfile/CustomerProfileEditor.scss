@@ -1,0 +1,52 @@
+@use 'theme';
+
+.CustomerProfileEditor_mainInfo {
+  align-items: center;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.CustomerProfileEditor_image {
+  margin-right: 24px;
+}
+
+.CustomerProfileEditor_firstName {
+  width: 175px;
+}
+
+.CustomerProfileEditor_lastName {
+  margin-left: auto;
+  width: 175px;
+}
+
+.CustomerProfileEditor_body {
+  padding-top: 16px;
+}
+
+.CustomerProfileEditor_footer {
+  text-align: right;
+
+  > * {
+    margin-left: 12px;
+  }
+}
+
+.CustomerProfileEditor_field {
+  margin-bottom: 21px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.CustomerProfileEditor_buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+.CustomerProfileEditor_divider {
+  background-color: theme.$divider;
+  margin: 0 12px;
+  width: 1px;
+}
+

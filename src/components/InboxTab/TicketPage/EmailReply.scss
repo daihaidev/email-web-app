@@ -1,0 +1,11 @@
+@use 'theme';
+
+.EmailReply_button {
+  height: 24px;
+  opacity: 0;
+  transition: var(--transition);
+
+  &.EmailReply_button__isExpanded {
+    opacity: 1;
+  }
+}

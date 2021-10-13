@@ -1,0 +1,108 @@
+@use 'theme';
+@use 'mixins';
+
+.Button {
+  @include mixins.default;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  height: 36px;
+  line-height: 36px;
+  position: relative;
+  transition: var(--transition);
+
+  :global(.uTouchOptimized) & {
+    height: 44px;
+    line-height: 44px;
+  }
+
+  &.Button__isActive,
+  :global(.uMouse) &:hover {
+    @include mixins.defaultHover;
+  }
+
+  &.Button__isDisabled {
+    color: theme.$lightGrey800;
+    pointer-events: none;
+  }
+}
+
+.Button__wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.Button__touchArea {
+  :global(.uTouchOptimized) & {
+    height: 44px;
+    left: 50%;
+    min-width: 44px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+
+.Button__block {
+  width: 100%;
+}
+
+.Button__small {
+  height: 26px;
+  line-height: 26px;
+
+  :global(.uTouchOptimized) & {
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
+.Button__medium {
+  height: 32px;
+}
+
+.Button__mobile {
+  height: 38px;
+}
+
+.Button__large {
+  border-radius: 8px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Button__primary {
+  @include mixins.primary;
+
+  &.Button__isActive,
+  :global(.uMouse) &:hover {
+    @include mixins.primaryHover;
+  }
+
+  &.Button__isDisabled {
+    background-color: theme.$lightGrey100;
+  }
+}
+
+.Button__primaryText {
+  @include mixins.primaryText;
+
+  &.Button__isActive,
+  :global(.uMouse) &:hover {
+    @include mixins.primaryTextHover;
+  }
+}
+
+.Button__alertText {
+  @include mixins.alertText;
+
+  &.Button__isDisabled {
+    background-color: theme.$lightGrey100;
+  }
+
+  &.Button__isActive,
+  :global(.uMouse) &:hover {
+    @include mixins.alertTextHover;
+  }
+}

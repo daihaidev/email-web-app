@@ -1,0 +1,64 @@
+@use 'theme';
+
+.TicketLabels {
+  display: flex;
+}
+
+.TicketLabels_label {
+  margin-right: 6px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.TicketLabels_inner {
+  display: flex;
+}
+
+.TicketLabels_addButton,
+.TicketLabels_noLabel {
+  align-items: center;
+  border: 1px dashed #c5cdd3;
+  border-radius: 6px;
+  color: theme.$lightGrey800;
+  display: flex;
+  height: 26px;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+}
+
+.TicketLabels_noLabel {
+  .TicketLabels_addButton__small & {
+    display: none;
+  }
+}
+
+.TicketLabels_addButton {
+  cursor: pointer;
+  margin-right: 6px;
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+  }
+}
+
+.TicketLabels_addButtonIcon {
+  fill: theme.$lightGrey800;
+  margin: 0 auto;
+}
+
+.TicketLabels_addButton__small {
+  padding: 0;
+  width: 26px;
+}
+
+.TicketLabels_addButtonText {
+  margin-left: 6px;
+
+  .TicketLabels_addButton__small & {
+    display: none;
+  }
+}

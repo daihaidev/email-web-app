@@ -1,0 +1,51 @@
+@use 'theme';
+@use 'mixins';
+
+.Note_content {
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Note_content__isExpanded {
+  background-color: theme.$lightGrey200;
+  border-radius: 8px;
+  height: auto;
+  padding: 15px 18px;
+  position: relative;
+  white-space: normal;
+
+  &::after {
+    @include mixins.pseudo;
+    border-radius: 3px 0 0;
+    border-right: 12px solid theme.$white;
+    border-top: 12px solid theme.$lightGrey400;
+    bottom: 0;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 0;
+  }
+
+  &.Note_content__isDraft {
+    background-color: theme.$lightGrey300;
+    /* stylelint-disable */
+    &::after {
+      border-right-color: theme.$lightGrey100;
+    }
+    /* stylelint-enable */
+  }
+
+}
+
+
+.Note_icon {
+  display: block;
+  fill: theme.$darkGrey400;
+}
+
+.Note_updated {
+  font-style: italic;
+  margin-top: 1em;
+}

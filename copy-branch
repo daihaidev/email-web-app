@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av --delete --exclude node_modules --exclude .git ./ $1/

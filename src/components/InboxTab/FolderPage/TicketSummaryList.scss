@@ -1,0 +1,12 @@
+@use 'theme';
+
+.TicketSummaryList {
+  background-color: theme.$lightGrey200;
+  border-radius: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.TicketSummaryList_ticketSummary {
+  margin-bottom: 6px;
+}

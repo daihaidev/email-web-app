@@ -1,0 +1,8 @@
+@use 'mixins';
+
+.TextArea {
+  @include mixins.inputField;
+  height: 99px; // Could be set up as prop "height" and applied with inline style attr
+  padding: 7px 12px 6px;
+}
+

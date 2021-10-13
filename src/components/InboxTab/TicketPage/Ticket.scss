@@ -1,0 +1,29 @@
+@use 'theme';
+@use 'mixins';
+
+.Ticket {
+  background-color: theme.$white;
+  border-radius: 6px;
+  position: relative;
+}
+
+.Ticket__stickyHeader {
+  @media (min-width: theme.$smMin) {
+    padding: 179px 0 0;
+  }
+  @media (min-width: theme.$mdMin) {
+    padding-top: 109px;
+  }
+}
+
+.Ticket_footer {
+  padding: 20px 24px;
+}
+
+.Ticket_footerButtons {
+  display: flex;
+
+  > * {
+    margin-right: 16px;
+  }
+}

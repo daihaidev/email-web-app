@@ -1,0 +1,46 @@
+@use 'theme';
+@use 'mixins';
+
+.AppMenuButton_wrapper {
+  margin: 4px 8px 0 4px;
+
+  @media (min-width: theme.$smMin) {
+    left: 12px;
+    margin: 0;
+    position: absolute;
+    top: 12px;
+
+    :global(.uTouchOptimized) & {
+      left: 8px;
+      top: 8px;
+    }
+  }
+
+  @media (min-width: theme.$mdMin) {
+    display: none;
+  }
+}
+
+.AppMenuButton__isHidden {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    display: block;
+  }
+  @media (min-width: theme.$mdMin) {
+    display: none;
+  }
+}
+
+.AppMenuButton__hasNotifications {
+  &::before {
+    @include mixins.pseudo();
+    background: theme.$red;
+    border: 3px solid theme.$white;
+    border-radius: 50%;
+    bottom: 2px;
+    height: 14px;
+    position: absolute;
+    right: 2px;
+    width: 14px;
+  }
+}

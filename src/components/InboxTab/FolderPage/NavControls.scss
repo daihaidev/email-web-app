@@ -1,0 +1,17 @@
+@use 'theme';
+
+.NavControls {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    display: flex;
+    padding: 0 0 0 28px;
+  }
+}
+
+.NavControls_viewMode {
+  display: flex;
+}
+
+.NavControls_pageNav {
+  margin-left: 15px;
+}

@@ -1,0 +1,28 @@
+@use 'theme';
+
+.TextButtonWithIcon {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 40px;
+  padding: 0 15px 0 7px;
+}
+
+.TextButtonWithIcon_icon {
+  margin-right: 7px;
+  fill: theme.$darkGrey400;
+
+  .TextButtonWithIcon__primary & {
+    fill: theme.$white;
+  }
+
+  .TextButtonWithIcon__primaryText & {
+    fill: theme.$blue;
+  }
+
+  .TextButtonWithIcon__isDisabled & {
+    fill: theme.$buttonIconDisabled;
+  }
+}

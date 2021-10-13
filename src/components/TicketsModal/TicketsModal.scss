@@ -1,0 +1,67 @@
+@use 'theme';
+
+.TicketsModal {
+  width: 1100px;
+}
+
+.TicketsModal_header {
+  border-radius: 16px 16px 0 0;
+  box-shadow: theme.$shadow16;
+}
+
+.TicketsModal_ticketHeader {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+}
+
+.TicketModal_mergeHeader {
+  font-size: 14px;
+  line-height: 21px;
+  padding: 28px 0 6px 12px;
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.TicketsModal_ticketNumber {
+  font-size: 17px;
+  line-height: 22px;
+  padding-left: 12px;
+  font-weight: 700;
+  color: theme.$darkGrey;
+}
+
+.TicketsModal_ticketActions {
+  margin-left: auto;
+  display: flex;
+}
+
+.TicketsModal_ticketNav {
+  display: flex;
+  padding: 0 25px 0 13px;
+  border-left: 1px solid theme.$lightGrey400;
+}
+
+.TicketsModal_ticketNavButton {
+  margin-right: 8px;
+}
+
+.TicketsModal_ticketActionsButton {
+  margin-right: 12px;
+}
+
+.TicketsModal_ticket {
+  @media (min-width: theme.$smMin) {
+    padding-top: 0;
+  }
+  @media (min-width: theme.$mdMin) {
+    padding-top: 0;
+  }
+}
+
+.TicketsModal_ticketWrapper {
+  padding-bottom: 16px;
+  border-radius: 0 0 16px;
+}

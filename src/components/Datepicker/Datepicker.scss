@@ -1,0 +1,130 @@
+@use 'theme';
+@use 'mixins';
+
+.Datepicker {
+  width: calc(7 * 32px);
+}
+
+.Datepicker_days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Datepicker_body {
+  padding-top: 18px;
+}
+
+.Datepicker_header {
+  border-bottom: 1px solid theme.$lightGrey400;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.Datepicker_navigation {
+  margin-left: auto;
+  margin-right: -6px;
+  display: flex;
+
+  > * {
+    margin-left: 6px;
+  }
+}
+
+.Datepicker_navigationIcon {
+  fill: theme.$darkGrey400;
+}
+
+.Datepicker_navigationPrev {
+  transform: rotate(90deg);
+}
+
+.Datepicker_navigationNext {
+  transform: rotate(-90deg);
+}
+
+.Datepicker_navigationButton__hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.Datepicker_currentMonth {
+  color: theme.$darkGrey;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.Datepicker_dayName {
+  width: 32px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: theme.$darkGrey400;
+}
+
+.Datepicker_dayNames {
+  margin-bottom: 4px;
+  display: flex;
+}
+
+.Datepicker_dayCell {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Datepicker_day {
+  height: 26px;
+  width: 26px;
+  line-height: 26px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  color: theme.$darkGrey600;
+  transition: var(--transition);
+
+  :global(.uMouse) &:hover {
+    @include mixins.defaultHover;
+  }
+}
+
+.Datepicker_day__otherMonth {
+  color: theme.$lightGrey800;
+}
+
+.Datepicker_day__today {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 10px;
+    border-radius: 1.5px;
+    background-color: theme.$blue;
+  }
+}
+
+.Datepicker_day__selected {
+  background-color: theme.$blue200;
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$blue200;
+  }
+}
+
+.Datepicker_day__disabled {
+  pointer-events: none;
+  color: theme.$lightGrey500;
+}
+

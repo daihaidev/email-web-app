@@ -1,0 +1,12 @@
+@use 'theme';
+
+.DropdownItemLabeledIcon {
+  align-items: center;
+  display: flex;
+}
+
+.DropdownItemLabeledIcon_icon {
+  fill: theme.$darkGrey400;
+  margin-left: -5px;
+  margin-right: 6px;
+}

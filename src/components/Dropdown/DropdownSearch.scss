@@ -1,0 +1,47 @@
+@use 'theme';
+@use 'mixins';
+
+.DropdownSearch {
+  input {
+    @include theme.textFont;
+    border: 0;
+    box-sizing: border-box;
+    color: theme.$darkGrey;
+    font-size: 13px;
+    line-height: 20px;
+    outline: none;
+    padding: 4px 0;
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: theme.$lightGrey800;
+  }
+
+  input:focus::placeholder {
+    color: transparent;
+  }
+}
+
+.DropdownSearch__top {
+  border-bottom: 1px solid theme.$divider;
+
+  input {
+    padding-bottom: 7px;
+
+    /* stylelint-disable */
+    :global(.uTouchOptimized) & {
+      padding: 11px 0 12px;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.DropdownSearch__bottom {
+  border-top: 1px solid theme.$lightGrey;
+  padding-top: 7px;
+
+  input {
+    padding-top: 7px;
+  }
+}

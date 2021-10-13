@@ -1,0 +1,16 @@
+@use 'theme';
+
+.UserPill {
+  align-items: center;
+  display: flex;
+}
+
+.UserPill_name {
+  color: theme.$darkGrey;
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

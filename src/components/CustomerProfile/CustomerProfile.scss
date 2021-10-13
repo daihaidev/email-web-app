@@ -1,0 +1,53 @@
+@use 'theme';
+@use 'mixins';
+
+.CustomerProfile {
+  color: theme.$darkGrey;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20.8px;
+  padding: 14px 0 2px;
+}
+
+.CustomerProfile_header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.CustomerProfile_avatar {
+  margin: 0 29px;
+
+  :global(.uTouchOptimized) & {
+    margin: 0 18px;
+  }
+}
+
+.CustomerProfile_name {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-bottom: 19px;
+  text-align: center;
+}
+
+.CustomerProfile_info {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.CustomerProfile_infoIcon {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.CustomerProfile_icon {
+  fill: theme.$darkGrey400;
+}
+
+.CustomerProfile_apps {
+  padding-top: 6px;
+}

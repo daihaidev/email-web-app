@@ -1,0 +1,47 @@
+@use 'theme';
+@use 'mixins';
+
+.TicketColliders {
+  display: flex;
+}
+
+
+.TicketColliders__withDropDown {
+  cursor: pointer;
+}
+
+.TicketColliders_item {
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.TicketColliders_more {
+  background-color: theme.$lightGrey200;
+  border-radius: 8px;
+  color: theme.$darkGrey400;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  height: 36px;
+  line-height: 16px;
+  width: 36px;
+}
+
+
+.TicketColliders_dropDownItem {
+  align-items: center;
+  display: flex;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+.TicketColliders_dropDownText {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 8px;
+  white-space: nowrap;
+}

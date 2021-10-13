@@ -1,0 +1,67 @@
+@use 'theme';
+@use 'mixins';
+
+.MergeNote {
+  display: flex;
+  padding: 27px 24px 24px;
+  box-shadow: theme.$shadow16;
+}
+
+.MergeNote_avatar {
+  margin-right: 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.MergeNote_content {
+  flex-grow: 1;
+}
+
+.MergeNote_label {
+  font-size: 14px;
+  line-height: 20px;
+  color: theme.$darkGrey;
+  margin-bottom: 19px;
+}
+
+.MergeNote_body {
+  margin-bottom: 24px;
+  background-color: theme.$lightGrey200;
+  min-height: 78px;
+  border-radius: 6px 6px 0;
+  position: relative;
+  padding: 15px 18px;
+
+  &::after {
+    @include mixins.textareaCorner;
+  }
+}
+
+.MergeNote_info {
+  margin-bottom: 10px;
+  color: theme.$darkGrey;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.MergeNote_textarea {
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  border: 0;
+  color: theme.$darkGrey;
+  font-size: 14px;
+  line-height: 21px;
+  resize: none;
+  padding: 0;
+}
+
+
+.MergeNote_actions {
+  display: flex;
+  justify-content: flex-end;
+
+  > * {
+    margin-left: 12px;
+  }
+}

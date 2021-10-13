@@ -1,0 +1,15 @@
+@use 'theme';
+
+.TicketsList {
+  padding: 24px;
+  border-radius: 0 0 16px 16px;
+  background-color: theme.$lightGrey200;
+}
+
+.TicketsList_Item {
+  margin-bottom: 4px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

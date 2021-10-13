@@ -1,0 +1,52 @@
+@use 'theme';
+
+.Actions {
+  display: flex;
+  height: 36px;
+  justify-content: flex-end;
+  margin: 8px 8px 0;
+  width: 100%;
+  @media (min-width: theme.$smMin) {
+    justify-content: flex-start;
+    margin: 0;
+    padding-left: 11px;
+    width: auto;
+  }
+
+  :global(.uTouchOptimized) & {
+    height: 44px;
+    margin: 4px 4px 0;
+    @media (min-width: theme.$smMin) {
+      margin: 0;
+      padding-left: 11px;
+    }
+  }
+}
+
+.Actions_button {
+  margin-left: 14px;
+
+  :global(.uTouchOptimized) & {
+    margin-left: 6px;
+  }
+  @media (min-width: theme.$smMin) {
+    margin-left: 8px;
+  }
+}
+
+.Actions_button__isFirst {
+  margin-left: 0;
+  margin-right: auto;
+
+  :global(.uTouchOptimized) & {
+    margin-left: 0;
+    @media (min-width: theme.$smMin) {
+      margin-left: 8px;
+    }
+  }
+  @media (min-width: theme.$smMin) {
+    margin-left: 8px;
+  }
+}
+
+

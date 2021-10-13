@@ -1,0 +1,64 @@
+@use 'theme';
+@use 'mixins';
+
+.Dropdown {
+  @include theme.textFont;
+  color: theme.$lightGrey;
+  font-size: 13px;
+  position: relative;
+}
+
+.Dropdown_inner {
+  background-color: theme.$white;
+  border-radius: 12px;
+  box-shadow: theme.$shadow24;
+  position: absolute;
+  z-index: theme.$zIndexDropdown;
+
+  .Dropdown__wide & {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.Dropdown__submenu {
+  position: relative;
+}
+
+.Dropdown_inner__submenu {
+  left: calc(100% - 4px);
+  top: -6px;
+}
+
+.Dropdown_inner__bottomLeft {
+  left: 0;
+  top: 100%;
+}
+
+.Dropdown_inner__bottomRight {
+  right: 0;
+  top: 100%;
+}
+
+.Dropdown_inner__topLeft {
+  bottom: 100%;
+  left: 0;
+}
+
+.Dropdown_inner__topRight {
+  bottom: 100%;
+  right: 0;
+}
+
+.Dropdown_toggle {
+  align-items: center;
+  color: theme.$darkGrey;
+  display: flex;
+  position: relative;
+}
+
+.Dropdown_toggle__submenu {
+  margin: -5px -8px;
+  padding: 5px 8px;
+}
+

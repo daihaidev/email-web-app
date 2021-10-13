@@ -1,0 +1,32 @@
+@use 'theme';
+
+.Pagination {
+  display: flex;
+}
+
+.Pagination_input {
+  @include theme.textFont;
+  background-color: theme.$white;
+  border: 0;
+  border-radius: 6px;
+  color: theme.$darkGrey200;
+  cursor: pointer;
+  font-size: 13px;
+  height: 36px;
+  outline: none;
+  text-align: center;
+  transition: var(--transition);
+  width: 24px;
+
+  :global(.uTouchOptimized) & {
+    height: 44px;
+  }
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+  }
+
+  &:focus {
+    background-color: theme.$white;
+  }
+}

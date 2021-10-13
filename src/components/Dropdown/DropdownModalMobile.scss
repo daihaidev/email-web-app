@@ -1,0 +1,54 @@
+@use 'theme';
+@use 'mixins';
+
+.DropdownModalMobile {
+  background-color: theme.$white;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 7;
+}
+
+
+.DropdownModalMobile_header {
+  align-items: center;
+  display: flex;
+  padding: 4px;
+}
+
+.DropdownModalMobile_title {
+  color: theme.$darkGrey600;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-left: 8px;
+}
+
+.DropdownModalMobile_content {
+  height: calc(100% - 52px);
+  padding: 0 0 8px 8px;
+  // TODO: move to mixin, used also in sidebar. As a option - create scroll React component
+  position: relative;
+
+  &::before {
+    @include mixins.pseudo;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 44%, theme.$white 100%);
+    background-position: center center;
+    background-size: cover;
+    height: 26px;
+    left: 0;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+    z-index: theme.$zIndexScrollOverflow;
+  }
+}
+
+.DropdownModalMobile_contentScroll {
+  @include mixins.withStyledScrollbar;
+  height: 100%;
+  padding-right: 14px;
+}

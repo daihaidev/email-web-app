@@ -1,0 +1,35 @@
+/*** HOW TO LIMIT ESLINT TO ONLY LOOK AT JS FILES? ***/
+
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier", "@babel"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "radix": "off",
+    "prettier/prettier": "error",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "camelcase": "off",
+    "react/no-danger": "off",
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "react/destructuring-assignment": "off",
+    "one-var": ["error", { "initialized": "never", "uninitialized": "always" }]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.js"],
+      "parser": "@babel/eslint-parser"
+    }
+  ]
+}

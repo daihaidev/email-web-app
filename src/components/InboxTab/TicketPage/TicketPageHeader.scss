@@ -1,0 +1,20 @@
+@use 'theme';
+
+
+.TicketPageHeader_search {
+  display: none;
+
+  @media (min-width: theme.$smMin) {
+    display: block;
+    margin: 0 -18px 0 32px;
+  }
+}
+
+.TicketPageHeader_ticketColliders {
+  display: none;
+
+  @media (min-width: theme.$smMin) {
+    display: block;
+    margin-left: auto;
+  }
+}

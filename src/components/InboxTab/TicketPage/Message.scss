@@ -1,0 +1,287 @@
+@use 'theme';
+@use 'mixins';
+
+.Message {
+  background-color: theme.$white;
+  cursor: pointer;
+  padding: 1px 24px;
+  margin-top: -1px;
+  position: relative;
+  transition: var(--transition);
+
+  &::before,
+  &::after {
+    border-bottom: 1px solid theme.$divider;
+    content: '';
+    display: block;
+    left: 24px;
+    position: absolute;
+    right: 24px;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+
+  :global(.uMouse) &:hover {
+    z-index: theme.$zIndexMessageHover;
+    /* stylelint-disable */
+    :global(.uTopShadow) {
+      display: block;
+    }
+    :global(.uBottomShadow) {
+      display: block;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.Message__withHiddenHoverTop {
+  :global(.uMouse) &:hover {
+    /* stylelint-disable */
+    :global(.uTopShadow) {
+      display: none;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.Message__withHiddenHoverBottom {
+  :global(.uMouse) &:hover {
+    /* stylelint-disable */
+    :global(.uBottomShadow) {
+      display: none;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.Message__withHiddenBorder {
+  &::after {
+    display: none;
+  }
+}
+
+.Message__isExpanded {
+  cursor: default;
+
+  :global(.uMouse) &:hover {
+    /* stylelint-disable */
+    :global(.uBottomShadow) {
+      display: none;
+    }
+    :global(.uTopShadow) {
+      display: none;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.Message__isDraft {
+  &.Message__isExpanded {
+    background-color: theme.$lightGrey100;
+
+    /* stylelint-disable */
+    &::before,
+    &::after {
+      border-color: theme.$dividerDark;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.Message_body {
+  padding: 0 0 16px;
+  background-color: theme.$white;
+
+  .Message__isExpanded.Message__isDraft & {
+    background-color: theme.$lightGrey100;
+  }
+
+  .Message__isExpanded & {
+    padding: 0 0 21px;
+  }
+}
+
+.Message_avatar {
+  float: left;
+  padding: 16px 20px 0 0;
+  transition: var(--transition);
+
+  .Message__isExpanded & {
+    cursor: pointer;
+    padding-top: 25px;
+  }
+}
+
+.Message_content {
+  color: theme.$darkGrey;
+  float: right;
+  font-size: 14px;
+  width: calc(100% - 62px);
+}
+
+.Message_from {
+  display: flex;
+  font-weight: 700;
+}
+
+.Message_textContent {
+  font-size: 14px;
+  font-weight: 400;
+
+  &::after {
+    @include mixins.pseudo($pos: static);
+    clear: both;
+  }
+}
+
+.Message_time {
+  color: theme.$darkGrey;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.Message_text {
+  float: left;
+  height: 20px;
+  opacity: 0.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 60px);
+
+  .Message__isExpanded & {
+    height: auto;
+    opacity: 1;
+    white-space: normal;
+    width: 100%;
+  }
+}
+
+.Message_fromSlot {
+  display: flex;
+  margin-left: 8px;
+}
+
+.Message_details {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  transition: var(--transition);
+
+  .Message__isExpanded & {
+    cursor: pointer;
+    padding: 24px 0 10px;
+  }
+}
+
+.Message_draftPill {
+  margin-left: 8px;
+}
+
+.Message_detailsRight {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+}
+
+.Message_more {
+  float: right;
+  margin: 5px 22px 0 0;
+  opacity: 1;
+
+  .Message__isExpanded & {
+    margin: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: 0;
+  }
+}
+
+.Message_actions {
+  margin: 0 -10px 0 9px;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+
+  .Message__isExpanded & {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.Message_draftShadows {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 6px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  &::before {
+    /* stylelint-disable */
+    .Message__withTopShadow & {
+      background: theme.$shadowGradientTop;
+      top: 0;
+    }
+    /* stylelint-enable */
+  }
+
+  &::after {
+    /* stylelint-disable */
+    .Message__withBottomShadow & {
+      bottom: 0;
+      background: theme.$shadowGradientBottom;
+    }
+    /* stylelint-enable */
+  }
+
+}
+
+
+
+.Message {
+  &:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    /* stylelint-disable */
+    &::before {
+      display: none;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.Message__withHiddenBorder {
+  padding-bottom: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+.Message__withHiddenBorder + .Message {
+  margin-top: 0;
+  padding-top: 0;
+
+  &::before {
+    display: none;
+  }
+}

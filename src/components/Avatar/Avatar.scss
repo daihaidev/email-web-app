@@ -1,0 +1,105 @@
+@use 'theme';
+@use 'mixins';
+
+.Avatar {
+  align-items: center;
+  background-color: theme.$blue;
+  border-radius: 6px;
+  color: theme.$white;
+  display: flex;
+  flex-shrink: 0;
+  font-weight: 700;
+  justify-content: center;
+}
+
+.Avatar_unassignedIcon {
+  border: 1px solid theme.$lightGrey400;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  fill: theme.$lightGrey800;
+}
+
+.Avatar_img {
+  border-radius: 6px;
+
+  .Avatar__small & {
+    border-radius: 8px;
+  }
+
+  .Avatar__large & {
+    border-radius: 12px;
+  }
+
+  .Avatar__extraLarge & {
+    border-radius: 16px;
+  }
+
+}
+
+.Avatar_label {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  font-size: 13px;
+  min-width: 0;
+  padding-left: 8px;
+
+  span {
+    @include mixins.truncateText;
+  }
+
+  :global(.uTouchOptimized) & {
+    font-size: 14px;
+    padding-left: 6px;
+  }
+}
+
+
+.Avatar__xxsmall {
+  font-size: 10px;
+  height: 22px;
+  width: 22px;
+
+  :global(.uTouchOptimized) & {
+    height: 26px;
+    width: 26px;
+  }
+}
+
+.Avatar__xsmall {
+  font-size: 12px;
+  height: 26px;
+  width: 26px;
+
+  :global(.uTouchOptimized) & {
+    height: 28px;
+    width: 28px;
+  }
+}
+
+.Avatar__small {
+  font-size: 12px;
+  height: 36px;
+  width: 36px;
+}
+
+.Avatar__medium {
+  font-size: 15px;
+  height: 42px;
+  width: 42px;
+}
+
+.Avatar__large {
+  border-radius: 12px;
+  font-size: 17px;
+  height: 62px;
+  width: 62px;
+}
+
+.Avatar__extraLarge {
+  border-radius: 16px;
+  font-size: 21px;
+  height: 76px;
+  width: 76px;
+}

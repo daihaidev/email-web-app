@@ -1,0 +1,57 @@
+@use 'theme';
+@use 'mixins';
+
+.MergeContent {
+  padding: 24px 40px;
+  background-color: theme.$lightGrey200;
+}
+
+.MergeContent_arrow {
+  width: 54px;
+  height: 16px;
+  margin: 10px auto 8px;
+  display: block;
+}
+
+.MergeContent_destination {
+  position: relative;
+}
+
+.MergeContent_prev,
+.MergeContent_next {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  :global(.uTouchOptimized) & {
+    width: 40px;
+  }
+}
+
+.MergeContent_button {
+  width: 32px;
+
+  :global(.uTouchOptimized) & {
+    width: 40px;
+  }
+}
+
+.MergeContent_prev {
+  left: -36px;
+
+  :global(.uTouchOptimized) & {
+    left: -40px;
+  }
+}
+
+.MergeContent_next {
+  right: -36px;
+
+  :global(.uTouchOptimized) & {
+    right: -40px;
+  }
+}
+
+.MergeContent_prevIcon {
+  transform: rotate(180deg);
+}

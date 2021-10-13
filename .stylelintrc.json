@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "selector-class-pattern": [
+      "^[A-Za-z_]+$",
+      {
+        "message":
+          "Selector should be written in PascalCase with underscores between elements and modifiers"
+      }
+    ],
+    "color-hex-length": "long",
+    "scss/dollar-variable-pattern": "^[_]?[a-z]+([a-zA-Z0-9]+)?$",
+    "scss/at-function-pattern": "^[a-z]+([a-zA-Z0-9]+)?$",
+    "scss/at-mixin-pattern": "^[a-z]+([a-zA-Z0-9]+)?$",
+    "order/properties-alphabetical-order": null
+  }
+}

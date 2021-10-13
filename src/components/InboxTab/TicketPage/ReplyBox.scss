@@ -1,0 +1,251 @@
+@use 'theme';
+@use 'mixins';
+
+.ReplyBox {
+  background: theme.$white;
+  border: 1px solid theme.$white;
+  border-radius: 16px;
+  box-shadow: theme.$shadow16;
+  margin: -1px 0 0;
+  padding: 0 28px;
+  position: relative;
+  z-index: theme.$zIndexReplyBox;
+}
+
+.ReplyBox__isReply {
+  border: 1px solid theme.$red;
+}
+
+.ReplyBox__permanent {
+  box-shadow: none;
+  margin-top: 0;
+}
+
+.ReplyBox_main {
+  padding-top: 22px;
+
+  .ReplyBox__permanent & {
+    padding-top: 0;
+  }
+
+  &::after {
+    @include mixins.pseudo($pos: static);
+    clear: both;
+  }
+}
+
+.ReplyBox_content {
+  float: right;
+  width: calc(100% - 62px);
+
+  .ReplyBox__permanent & {
+    width: calc(100% - 82px);
+  }
+}
+
+.ReplyBox_avatar {
+  float: left;
+  padding: 4px 20px 0 0;
+
+  .ReplyBox__permanent & {
+    padding-left: 20px;
+  }
+}
+
+.ReplyBox_actions {
+  align-items: center;
+  border-top: 1px solid theme.$divider;
+  display: flex;
+  padding: 9px 0;
+
+  .ReplyBox__permanent & {
+    border: 0;
+    margin: 0 -28px;
+    padding-left: 28px;
+    padding-right: 28px;
+    position: relative;
+  }
+
+  &::before {
+
+    /* stylelint-disable */
+    .ReplyBox__permanent & {
+      background: linear-gradient(to bottom, rgba(theme.$darkGrey, 0) 33%, rgba(theme.$darkGrey, 0.06) 100%);
+      content: '';
+      display: block;
+      height: 8px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: -8px;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.ReplyBox_sectionLeft {
+  display: flex;
+  margin-left: 16px;
+
+  > * {
+    margin-left: 8px;
+  }
+}
+
+.ReplyBox_sectionRight {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+}
+
+.ReplyBox_author {
+  color: theme.$lightGrey800;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-right: 12px;
+}
+
+.ReplyBox_noteFrom {
+  color: theme.$darkGrey;
+  display: flex;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 3px 0 11px;
+}
+
+.ReplyBox_noteIcon {
+  display: block;
+  fill: theme.$darkGrey400;
+  margin-left: 8px;
+}
+
+.ReplyBox_mainButtons {
+  display: flex;
+}
+
+.ReplyBox_mainButton__first {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.ReplyBox_mainButton {
+  border-right: 1px solid theme.$blue700;
+}
+
+.ReplyBox_mainButton__last {
+  border-bottom-left-radius: 0;
+  border-right: 0;
+  border-top-left-radius: 0;
+}
+
+.ReplyBox_body {
+  margin: 10px 0 11px;
+  position: relative;
+
+  .ReplyBox__permanent & {
+    margin-bottom: 17px;
+  }
+
+  .ReplyBox__note & {
+    margin-top: 0;
+
+    /* stylelint-disable */
+    &::after {
+      @include mixins.textareaCorner
+    }
+    /* stylelint-enable */
+  }
+
+}
+
+.ReplyBox_textarea {
+  border: 0;
+  color: theme.$darkGrey;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 130px;
+  outline: none;
+  padding: 0;
+  resize: none;
+  width: 100%;
+
+  .ReplyBox__note & {
+    background-color: theme.$lightGrey200;
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+}
+
+.ReplyBox_recipients {
+  position: relative;
+}
+
+.ReplyBox_recipientSelect {
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 25px 0 7px;
+  position: relative;
+  transition: background-color var(--transition);
+
+  &:hover {
+    background-color: theme.$lightGrey200;
+
+    /* stylelint-disable */
+    .ReplyBox_recipientSelectIcon {
+      opacity: 1;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.ReplyBox_recipientSelectIcon {
+  fill: theme.$darkGrey200;
+  opacity: 0;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  transition: opacity var(--transition);
+}
+
+.ReplyBox_recipientField {
+  display: flex;
+}
+
+.ReplyBox_recipientLabel {
+  color: theme.$darkGrey;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  padding-right: 5px;
+}
+
+.ReplyBox_recipientContent {
+  flex-grow: 1;
+}
+
+.ReplyBox_recipientsButtons {
+  display: flex;
+  padding-top: 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ReplyBox_recipientsButton {
+  font-size: 11px;
+  height: 26px;
+  line-height: 26px;
+}
+
+.ReplyBox_placeholderTo {
+  color: theme.$lightGrey800;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  padding-left: 7px;
+}

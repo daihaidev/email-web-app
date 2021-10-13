@@ -1,0 +1,33 @@
+@use 'theme';
+@use 'mixins';
+
+.LabelsList,
+.LabelsList_inner {
+  display: flex;
+}
+
+.LabelsList_moreTrigger {
+  color: theme.$darkGrey400;
+  cursor: pointer;
+  background-color: theme.$lightGrey200;
+  border-radius: 6px;
+  height: 26px;
+  position: relative;
+  padding: 0 6px;
+  font-size: 12px;
+  line-height: 26px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.LabelsList_dropdown {
+  padding: 8px 0 0 8px;
+  max-width: 350px;
+  width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.LabelsList_dropdownItem {
+  margin: 0 8px 8px 0;
+}

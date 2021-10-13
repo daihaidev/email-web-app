@@ -1,0 +1,72 @@
+@use 'theme';
+@use 'mixins';
+
+.Timepicker {
+  width: 200px;
+}
+
+.Timepicker_header {
+  border-bottom: 1px solid theme.$lightGrey400;
+  height: 44px;
+  padding-bottom: 11px;
+  display: flex;
+  justify-content: center;
+
+  .Timepicker_selectedTime {
+    cursor: default;
+  }
+}
+
+.Timepicker_selectedTime {
+  height: 33px;
+  line-height: 33px;
+  border-radius: 6px;
+  padding: 0 10px;
+  background-color: theme.$blue200;
+  color: theme.$darkGrey600;
+  font-weight: 400;
+  font-size: 15px;
+  margin-left: -10px;
+
+  span {
+    font-size: 11px;
+  }
+}
+
+.Timepicker_time {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 9px 0 10px;
+  line-height: 14px;
+  margin: 1px 2px;
+  width: 55px;
+  text-align: center;
+  color: theme.$darkGrey600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: var(--transition);
+
+  span {
+    font-size: 11px;
+  }
+
+  :global(.uMouse) &:hover {
+    @include mixins.defaultHover;
+  }
+}
+
+.Timepicker_time__isSelected {
+  background-color: theme.$blue200;
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$blue200;
+  }
+}
+
+.Timepicker_body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 260px;
+  padding: 10px 2px;
+}

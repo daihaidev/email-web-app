@@ -1,0 +1,19 @@
+@use 'theme';
+@use 'mixins';
+
+.ButtonMore {
+  background-color: theme.$lightGrey200;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  height: 12px;
+  overflow: hidden;
+  width: 30px;
+}
+
+.ButtonMore_icon {
+  display: block;
+  fill: theme.$darkGrey400;
+  margin: -2px auto 0;
+  transform: rotate(90deg);
+}

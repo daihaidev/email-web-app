@@ -1,0 +1,176 @@
+@use 'theme';
+@use 'mixins';
+
+.TicketAttributeHeader {
+  z-index: theme.$zIndexTicketAttributeHeader;
+  @media (min-width: theme.$smMin) {
+    background: theme.$white;
+    border-radius: 6px 6px 0 0;
+    padding: 10px 24px 24px;
+    position: relative;
+  }
+  @media (min-width: theme.$mdMin) {
+    display: flex;
+    padding: 9px 28px 26px;
+  }
+
+  &::after {
+    @include mixins.pseudo;
+    background-color: theme.$divider;
+    bottom: 0;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.TicketAttributeHeader__isSticky {
+  @media (min-width: theme.$smMin) {
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: theme.$zIndexTicketAttributeHeaderSticky;
+  }
+}
+
+.TicketAttributeHeader__isAttached {
+  @media (min-width: theme.$smMin) {
+    border-radius: 0;
+    border-top: 1px solid theme.$lightGrey200;
+  }
+
+  &::after {
+    background: linear-gradient(to top, rgba(theme.$darkGrey, 0) 33%, rgba(theme.$darkGrey, 0.06) 100%);
+    bottom: -8px;
+    content: '';
+    display: block;
+    height: 8px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: var(--transition);
+  }
+}
+
+.TicketAttributeHeader__isCollapsed {
+  @media (min-width: theme.$smMin) {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
+  }
+  @media (min-width: theme.$mdMin) {
+    padding: 8px 28px;
+  }
+}
+
+.TicketAttributeHeader_left {
+  min-width: 0;
+  @media (min-width: theme.$smMin) {
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: theme.$mdMin) {
+    margin-bottom: 0;
+  }
+
+  .TicketAttributeHeader__isCollapsed & {
+    @media (min-width: theme.$smMin) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.TicketAttributeHeader_userPill {
+  .TicketAttributeHeader__isCollapsed & {
+    @media (min-width: theme.$smMin) {
+      display: none;
+    }
+    @media (min-width: theme.$mdMin) {
+      display: block;
+    }
+  }
+}
+
+.TicketAttributeHeader_right {
+  margin-left: auto;
+}
+
+
+.TicketAttributeHeader__isDraft {
+  &::after {
+    display: none;
+  }
+}
+
+.TicketAttributeHeader_subject {
+  @media (min-width: theme.$smMin) {
+    margin-bottom: 10px;
+    margin-left: -14px;
+  }
+
+  .TicketAttributeHeader__isCollapsed & {
+    @media (min-width: theme.$smMin) {
+      display: none;
+    }
+  }
+
+  .TicketAttributeHeader__isDraft & {
+    @media (min-width: theme.$mdMin) {
+      margin-left: 0;
+    }
+  }
+}
+
+.TicketAttributeHeader_info {
+  @media (min-width: theme.$smMin) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+  }
+  @media (min-width: theme.$mdMin) {
+    align-items: center;
+    height: 38px;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+
+    > * {
+      margin-left: 20px;
+    }
+  }
+
+  .TicketAttributeHeader__isCollapsed & {
+    @media (min-width: theme.$smMin) {
+      display: none;
+    }
+  }
+}
+
+.TicketAttributeHeader_bottom {
+  cursor: pointer;
+  display: flex;
+  padding: 9px 0 24px;
+  transition: var(--transition);
+
+  .TicketAttributeHeader__isCollapsed & {
+    padding: 7px 0 8px;
+  }
+}
+
+.TicketAttributeHeader_state {
+  @media (min-width: theme.$smMin) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (min-width: theme.$mdMin) {
+    margin-left: auto;
+
+    > * {
+      margin-left: 20px;
+    }
+  }
+
+}

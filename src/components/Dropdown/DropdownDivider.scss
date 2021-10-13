@@ -1,0 +1,7 @@
+@use 'theme';
+
+.DropdownDivider {
+  background-color: theme.$divider;
+  height: 1px;
+  margin: 8px;
+}

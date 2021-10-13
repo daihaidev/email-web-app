@@ -1,0 +1,23 @@
+@use 'mixins';
+
+.InputSelect {
+  position: relative;
+  width: 100%;
+}
+
+.InputSelect_input {
+  cursor: pointer;
+  width: 100%;
+}
+
+.InputSelect_iconBlock {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.InputSelect_button {
+  border-radius: 6px;
+  height: 26px;
+  width: 26px;
+}

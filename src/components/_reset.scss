@@ -1,0 +1,74 @@
+/* box sizing everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* reset default padding */
+ul,
+ol {
+  padding-left: 2rem;
+}
+
+/* strip default margins */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* setup the body */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* responsive images */
+img {
+  display: block; //gets rid of the gap at the bottom
+  max-width: 100%;
+}
+
+/* let font styles be inherited into inputs */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* bold style */
+b,
+strong {
+  font-weight: 700;
+}
+
+/* id anchors shouldn't look like links */
+a:not([href]) {
+  &,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* disable user agent styling of button tag */
+button {
+  background: none;
+  border: 0;
+  outline: none;
+  padding: 0;
+}

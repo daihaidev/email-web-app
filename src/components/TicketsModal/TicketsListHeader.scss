@@ -1,0 +1,23 @@
+@use 'theme';
+
+.TicketsListHeader {
+  display: flex;
+  align-items: center;
+  padding: 0 25px 0 12px;
+}
+
+.TicketsListHeader_title {
+  font-size: 17px;
+  line-height: 22px;
+  color: theme.$darkGrey;
+  font-weight: 700;
+  margin-right: 32px;
+}
+
+.TicketsListHeader_pagination {
+  margin-left: 32px;
+}
+
+.TicketsListHeader_search {
+  flex-grow: 1;
+}

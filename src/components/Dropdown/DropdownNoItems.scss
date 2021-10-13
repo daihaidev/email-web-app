@@ -1,0 +1,8 @@
+@use 'theme';
+
+.DropdownNoItems {
+  color: theme.$lightGrey800;
+  margin-bottom: 4px;
+  margin-top: 2px;
+  text-align: center;
+}

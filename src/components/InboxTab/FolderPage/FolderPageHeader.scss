@@ -1,0 +1,10 @@
+@use 'theme';
+
+.FolderPageHeader_search {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    display: block;
+    flex-grow: 1;
+    margin-left: 32px;
+  }
+}

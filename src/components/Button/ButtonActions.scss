@@ -1,0 +1,35 @@
+@use 'theme';
+@use 'mixins';
+
+.ButtonActions {
+  background-color: theme.$white;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  height: 24px;
+  overflow: hidden;
+  transition: var(--transition);
+  width: 24px;
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+  }
+}
+
+.ButtonActions__isTransparent {
+  background-color: transparent;
+}
+
+.ButtonActions__isDisabled {
+  pointer-events: none;
+}
+
+.ButtonActions_icon {
+  display: block;
+  fill: theme.$buttonIcon;
+  margin: 2px auto 0;
+
+  .ButtonActions__isDisabled & {
+    fill: theme.$buttonIconDisabled;
+  }
+}

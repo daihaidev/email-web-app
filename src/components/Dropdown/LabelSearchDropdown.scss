@@ -1,0 +1,31 @@
+@use 'theme';
+@use 'mixins';
+
+.LabelSearchDropdown {
+  display: flex;
+  padding: 12px 8px 12px 16px;
+  @media (min-width: theme.$smMin) {
+    width: 350px;
+  }
+
+  :global(.uTouchOptimized) & {
+    padding: 8px 4px 8px 16px;
+  }
+}
+
+.LabelSearchDropdown_input {
+  padding: 8px 16px 0;
+}
+
+.LabelSearchDropdown_item {
+  margin: 4px 8px 4px 0;
+
+  :global(.uTouchOptimized) & {
+    margin: 8px 14px 8px 0;
+  }
+}
+
+.LabelSearchDropdown_content {
+  display: flex;
+  flex-wrap: wrap;
+}

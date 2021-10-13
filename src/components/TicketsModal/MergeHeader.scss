@@ -1,0 +1,26 @@
+@use 'theme';
+@use 'mixins';
+
+.MergeHeader {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+}
+
+.MergeHeader_note {
+  font-size: 14px;
+  line-height: 21px;
+  padding: 28px 0 6px 12px;
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.MergeHeader_title {
+  font-size: 17px;
+  line-height: 22px;
+  padding-left: 12px;
+  font-weight: 700;
+  color: theme.$darkGrey;
+}

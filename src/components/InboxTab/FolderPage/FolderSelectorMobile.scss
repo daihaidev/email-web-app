@@ -1,0 +1,19 @@
+@use 'theme';
+
+.FolderSelectorMobile_trigger {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  height: 44px;
+  line-height: 21px;
+  margin-top: 4px;
+  padding: 11px 22px 11px 0;
+  position: relative;
+}
+
+.FolderSelectorMobile_triggerIcon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}

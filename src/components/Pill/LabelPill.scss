@@ -1,0 +1,198 @@
+@use 'theme';
+@use 'mixins';
+
+.LabelPill {
+  @include theme.textFontBold;
+  align-self: flex-start;
+  border-radius: 6px;
+  color: theme.$white;
+  position: relative;
+  pointer-events: none;
+  white-space: nowrap;
+  width: min-content;
+  cursor: default;
+
+  /* stylelint-disable */
+  :global(.uMouse) &:hover {
+    .LabelPill_closeButton {
+      opacity: 1;
+    }
+  }
+  /* stylelint-enable */
+}
+
+.LabelPill__small {
+  font-size: 12px;
+  line-height: 12px;
+  padding: 7px 8px;
+
+  :global(.uTouchOptimized) & {
+    padding: 8px;
+  }
+}
+
+.LabelPill__interactive {
+  pointer-events: all;
+
+  :global(.uTouchOptimized) & {
+    font-size: 14px;
+    line-height: 14px;
+    padding: 9px 11px;
+  }
+}
+
+.LabelPill__clickable {
+  cursor: pointer;
+}
+
+.LabelPill_wrapper {
+  position: relative;
+}
+
+.LabelPill_suggestionIcon {
+  position: absolute;
+  right: -8px;
+  top: -10px;
+  fill: theme.$lightGrey800;
+
+  :global(.uTouchOptimized) & {
+    height: 24px;
+    width: 24px;
+    right: -10px;
+    top: -12px;
+  }
+}
+
+.LabelPill_touchArea {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  :global(.uTouchOptimized) & {
+    width: calc(100% + 10px);
+    height: calc(100% + 12px);
+  }
+}
+
+.LabelPill__green {
+  @include mixins.backgroundOpacity(theme.$green);
+  color: theme.$green;
+
+  &.LabelPill__isSelected {
+    background-color: theme.$green;
+    color: theme.$white;
+
+    /* stylelint-disable */
+    :global(.uMouse) &:hover {
+      background: darken(theme.$green, 5%);
+    }
+    /* stylelint-enable */
+  }
+}
+
+.LabelPill__red {
+  @include mixins.backgroundOpacity(theme.$red);
+  color: theme.$red;
+
+  &.LabelPill__isSelected {
+    background-color: theme.$red;
+    color: theme.$white;
+
+    /* stylelint-disable */
+    :global(.uMouse) &:hover {
+      background: darken(theme.$red, 5%);
+    }
+    /* stylelint-enable */
+  }
+
+}
+
+.LabelPill__blue {
+  @include mixins.backgroundOpacity(theme.$blue);
+  color: theme.$blue;
+
+  &.LabelPill__isSelected {
+    background-color: theme.$blue;
+    color: theme.$white;
+
+    /* stylelint-disable */
+    :global(.uMouse) &:hover {
+      background: darken(theme.$blue, 5%);
+    }
+    /* stylelint-enable */
+  }
+}
+
+.LabelPill__purple {
+  @include mixins.backgroundOpacity(theme.$purple);
+  color: theme.$purple;
+
+  &.LabelPill__isSelected {
+    background-color: theme.$purple;
+    color: theme.$white;
+
+    /* stylelint-disable */
+    :global(.uMouse) &:hover {
+      background: darken(theme.$purple, 5%);
+    }
+    /* stylelint-enable */
+  }
+}
+
+.LabelPill__orange {
+  @include mixins.backgroundOpacity(theme.$orange);
+  color: theme.$orange;
+
+  &.LabelPill__isSelected {
+    background-color: theme.$orange;
+    color: theme.$white;
+
+    /* stylelint-disable */
+    :global(.uMouse) &:hover {
+      background: darken(theme.$orange, 5%);
+    }
+    /* stylelint-enable */
+  }
+}
+
+.LabelPill_closeButton {
+  align-items: center;
+  border-radius: 0 6px 6px 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--transition);
+  width: 18px;
+  cursor: pointer;
+
+  .LabelPill__green & {
+    background-color: theme.$green;
+  }
+
+  .LabelPill__red & {
+    background-color: theme.$red;
+  }
+
+  .LabelPill__blue & {
+    background-color: theme.$blue;
+  }
+
+  .LabelPill__purple & {
+    background-color: theme.$purple;
+  }
+
+  .LabelPill__orange & {
+    background-color: theme.$orange;
+  }
+}
+
+.LabelPill_closeButtonIcon {
+  fill: theme.$white;
+}

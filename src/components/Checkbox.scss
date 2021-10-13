@@ -1,0 +1,57 @@
+@use 'theme';
+
+.Checkbox {
+  height: 36px;
+  width: 36px;
+}
+
+.Checkbox__small {
+  height: 32px;
+  width: 32px;
+}
+
+.Checkbox_checkboxInput {
+  position: absolute;
+  visibility: hidden;
+}
+
+
+.Checkbox_checkboxLabel {
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  padding: 9px;
+  position: relative;
+  transition: var(--transition);
+  width: 100%;
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+    border-radius: 6px;
+  }
+}
+
+.Checkbox_checkboxLabel__noHoverIfChecked {
+  :global(.uMouse) &:hover {
+    background-color: transparent;
+  }
+}
+
+.Checkbox_checkboxLabel__small {
+  padding: 7px;
+}
+
+.Checkbox_checkboxInput:checked+.Checkbox_checkboxLabel .Checkbox_tickIcon {
+  background-color: theme.$blue;
+  border: 0;
+  fill: theme.$white;
+}
+
+.Checkbox_tickIcon {
+  border: 2px solid theme.$darkGrey200;
+  border-radius: 4px;
+  fill: transparent;
+  height: 18px;
+  pointer-events: none;
+  width: 18px;
+}

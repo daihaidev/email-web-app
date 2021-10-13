@@ -1,0 +1,29 @@
+@use 'theme';
+@use 'mixins';
+
+.AlertBar {
+  position: relative;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: theme.$textFontFamily;
+  color: theme.$white;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+
+  a {
+    color: theme.$white;
+    font-weight: 700;
+  }
+}
+
+.AlertBar__error {
+  background-color: theme.$orange;
+}
+
+.AlertBar__info {
+  background-color: theme.$darkGrey600;
+}
+

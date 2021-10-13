@@ -1,0 +1,24 @@
+@use 'theme';
+
+.SecondaryNav {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    align-items: center;
+    display: flex;
+    z-index: theme.$zIndexSecondaryNav;
+  }
+}
+
+.SecondaryNav_status {
+  margin: 4px 4px 12px;
+  padding: 0;
+}
+
+.SecondaryNav_notifications {
+  display: flex;
+  margin-right: 13px;
+
+  :global(.uTouchOptimized) & {
+    margin-right: 4px;
+  }
+}

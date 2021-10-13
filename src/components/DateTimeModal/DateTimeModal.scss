@@ -1,0 +1,75 @@
+@use 'theme';
+@use 'mixins';
+
+.DateTimeModal_selectors {
+  width: 452px;
+  padding-top: 16px;
+  margin-bottom: -7px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.DateTimeModal_closeButton {
+  margin-left: auto;
+}
+
+.DateTimeModal_footer {
+  display: flex;
+  align-items: center;
+}
+
+.DateTimeModal_footerMessage {
+  color: theme.$red;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.DateTimeModal_footerActions {
+  margin-left: auto;
+
+  > * {
+    margin-left: 12px;
+  }
+}
+
+.DateTimeModal_inputField {
+  display: flex;
+  align-items: flex-start;
+}
+
+.DateTimeModal_datepicker {
+  width: 225px;
+}
+
+.DateTimeModal_inputLabel {
+  color: theme.$darkGrey;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 16px;
+  line-height: 36px;
+}
+
+.DateTimeModal_timepicker {
+  width: 200px;
+}
+
+.DateTimeModal_datepickerWrapper {
+  padding-top: 34px;
+}
+
+.DateTimeModal_timepickerWrapper {
+  padding-top: 27px;
+}
+
+.DateTimeModal_input {
+  flex-grow: 1;
+}
+
+.DateTimeModal_note {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: theme.$darkGrey200;
+  padding-top: 6px;
+  height: 16px;
+}

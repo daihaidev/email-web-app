@@ -1,0 +1,46 @@
+
+@use 'theme';
+@use 'mixins';
+
+.TicketSearchDropdown__dropdownInner {
+  position: fixed;
+  right: 4px;
+  top: 44px;
+  width: 450px;
+  z-index: theme.$zIndexSearch;
+}
+
+.TicketSearchDropdown__content {
+  width: 450px;
+}
+
+.TicketSearchDropdown_input {
+  padding: 0;
+
+  input {
+    border-radius: 12px 12px 0 0;
+    height: 41px;
+    padding: 13px 16px 8px;
+  }
+}
+
+.TicketSearchDropdown_results {
+  background-color: theme.$lightGrey200;
+  border-radius: 0 0 12px 12px;
+  max-height: 466px;
+}
+
+.TicketSearchDropdown_resultsScroll {
+  @include mixins.withStyledScrollbar;
+  color: theme.$lightGrey500;
+  max-height: 434px; // 466 minus 16*2 padding
+  padding: 16px;
+}
+
+.TicketSearchDropdown_resultsItem {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

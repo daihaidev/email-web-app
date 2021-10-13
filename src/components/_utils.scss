@@ -1,0 +1,62 @@
+@use 'theme';
+
+// all classes in this file should be wrapped with :global()
+
+:global(.uHidden) {
+  left: -100000px !important;
+  position: absolute !important;
+  top: -100000px !important;
+
+  // can't calcultate size of things that are display: none
+  // display: none !important;
+}
+
+:global(.uHiddenInline) {
+  overflow-y: hidden !important;
+  height: 0 !important;
+}
+
+:global(.uClear) {
+  clear: both;
+}
+
+:global(.uBottomShadow),
+:global(.uTopShadow) {
+  display: none;
+  height: 20px;
+  left: 24px;
+  margin: auto;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 24px;
+  z-index: -1;
+
+  &::after {
+    border-radius: 12px;
+    box-shadow: theme.$shadow2;
+    content: '';
+    display: block;
+    height: 20px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+  }
+}
+
+:global(.uBottomShadow) {
+  bottom: -9px;
+
+  &::after {
+    bottom: 10px;
+  }
+}
+
+:global(.uTopShadow) {
+  top: -9px;
+
+  &::after {
+    top: 10px;
+  }
+}

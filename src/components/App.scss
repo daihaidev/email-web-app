@@ -1,0 +1,22 @@
+@use 'global';
+@use 'theme';
+
+.App {
+  --transition: 0.1s;
+  --transition150: 0.15s;
+  --transition200: 0.2s;
+  color: theme.$blue;
+  font-weight: bold;
+}
+
+.App_content {
+  @media (min-width: theme.$mdMin) {
+    margin-left: 70px;
+  }
+}
+
+.App__noAnimations {
+  --transition: 0s;
+  --transition150: 0s;
+  --transition200: 0s;
+}

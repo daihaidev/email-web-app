@@ -1,0 +1,112 @@
+@use 'theme';
+
+.Inbox {
+  padding-left: 2px;
+  position: relative;
+  transition: var(--transition150);
+
+  &::after {
+    background-color: theme.$divider;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 8px;
+    position: absolute;
+    right: 8px;
+  }
+}
+
+.Inbox__closed {
+  transition-delay: var(--transition);
+}
+
+.Inbox_heading {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-top: 17px;
+  position: relative;
+  transition: var(--transition);
+
+  :global(.uTouchOptimized) & {
+    padding-bottom: 8px;
+    padding-top: 22px;
+  }
+
+  .Inbox__closed & {
+    padding-bottom: 16px;
+
+    /* stylelint-disable */
+    :global(.uTouchOptimized) & {
+      padding-bottom: 22px;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.Inbox_title {
+  @include theme.textFontBold;
+  color: theme.$darkGrey600;
+  display: flex;
+  flex: 1;
+  font-size: 15px;
+  line-height: 18px;
+
+  :global(.uTouchOptimized) & {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.Inbox_foldersWrap {
+  position: relative;
+}
+
+.Inbox_foldersClone,
+.Inbox_folders {
+  padding-bottom: 12px;
+
+  :global(.uTouchOptimized) & {
+    padding-bottom: 8px;
+  }
+}
+
+.Inbox_foldersClone {
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+.Inbox_folders__opened {
+  transition: var(--transition);
+  transition-delay: var(--transition);
+}
+
+.Inbox_folders__closed {
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.Inbox_btnGroup {
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 14px;
+  transition: var(--transition);
+
+  :global(.uMouse) .Inbox_heading:hover & {
+    opacity: 1;
+  }
+
+  :global(.uTouchOptimized) & {
+    top: 17px;
+  }
+}

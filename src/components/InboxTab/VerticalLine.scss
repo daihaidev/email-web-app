@@ -1,0 +1,7 @@
+@use 'theme';
+
+.VerticalLine {
+  background-color: theme.$blue;
+  border-radius: 3px;
+  width: 3px;
+}

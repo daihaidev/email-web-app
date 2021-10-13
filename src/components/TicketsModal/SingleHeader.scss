@@ -1,0 +1,36 @@
+@use 'theme';
+@use 'mixins';
+
+
+.SingleHeader {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+}
+
+.SingleHeader_title {
+  font-size: 17px;
+  line-height: 22px;
+  padding-left: 12px;
+  font-weight: 700;
+  color: theme.$darkGrey;
+}
+
+.SingleHeader_actions {
+  margin-left: auto;
+  display: flex;
+}
+
+.SingleHeader_nav {
+  display: flex;
+  padding: 0 25px 0 13px;
+  border-left: 1px solid theme.$lightGrey400;
+}
+
+.SingleHeader_navButton {
+  margin-right: 8px;
+}
+
+.SingleHeader_actionsButton {
+  margin-right: 12px;
+}

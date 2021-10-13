@@ -1,0 +1,47 @@
+@use 'theme';
+
+.Search {
+  height: 36px;
+  position: relative;
+
+  :global(.uMouse) &:hover {
+    opacity: 1;
+  }
+}
+
+.Search_input {
+  @include theme.textFont;
+  background-color: theme.$lightGrey200;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: theme.$darkGrey;
+  font-size: 13px;
+  height: 100%;
+  min-width: 100px;
+  outline: none;
+  padding: 0 15px 0 40px;
+  transition: all ease-in var(--transition200);
+  width: 100%;
+
+  &:focus {
+    background-color: theme.$white;
+    border-color: theme.$lightGrey800;
+  }
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$white;
+    box-shadow: theme.$shadow2;
+  }
+}
+
+.Search_magnifierIcon {
+  fill: theme.$darkGrey400;
+  left: 9px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Search_crossIcon__active {
+  opacity: 1;
+}

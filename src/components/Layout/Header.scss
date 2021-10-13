@@ -1,0 +1,71 @@
+@use 'theme';
+@use 'mixins';
+
+.Header {
+  background-color: theme.$white;
+  box-shadow: 0 0 6px 0 rgba(33, 53, 66, 0.22), 0 0 16px 0 rgba(33, 53, 66, 0.12);
+  display: flex;
+  height: 52px;
+  position: relative;
+  z-index: theme.$zIndexHeader;
+  @media (min-width: theme.$smMin) {
+    align-items: center;
+    box-shadow: none;
+    height: auto;
+    padding: 12px 17px 12px 0;
+
+    :global(.uTouchOptimized) & {
+      padding: 8px 13px 8px 0;
+    }
+
+  }
+}
+
+.Header_heading {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    display: flex;
+    flex-shrink: 0;
+    height: 34px;
+    justify-content: space-between;
+    padding: 0 19px 0 62px;
+    position: relative;
+    width: 256px;
+  }
+  @media (min-width: theme.$mdMin) {
+    padding: 0 19px 0 24px;
+  }
+}
+
+.Header_title {
+  @include theme.textFont;
+  color: theme.$darkGrey;
+  font-size: 20px;
+  position: relative;
+
+  &::after {
+    @include mixins.pseudo;
+    background-color: theme.$blue;
+    border-radius: 5px;
+    height: 4px;
+    margin-top: 3px;
+    width: 37px;
+  }
+}
+
+.Header_divider {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    background-color: theme.$divider;
+    display: block;
+    height: 36px;
+    margin: 0 12px;
+    width: 1px;
+
+    :global(.uTouchOptimized) & {
+      height: 44px;
+      margin: 0 8px;
+    }
+  }
+}
+

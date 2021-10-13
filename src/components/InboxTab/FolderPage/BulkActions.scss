@@ -1,0 +1,89 @@
+@use 'theme';
+
+.BulkActions {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    display: flex;
+    padding-left: 19px;
+  }
+}
+
+.BulkActions_checkbox {
+  height: 36px;
+  width: 36px;
+
+  :global(.uTouchOptimized) & {
+    height: 44px;
+    width: 44px;
+  }
+}
+
+.BulkActions_checkboxInput {
+  position: absolute;
+  visibility: hidden;
+}
+
+.BulkActions_checkboxLabel {
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  padding: 9px;
+  position: relative;
+  transition: var(--transition);
+  width: 100%;
+
+  :global(.uTouchOptimized) & {
+    padding: 13px;
+  }
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+  }
+}
+
+.BulkActions_checkboxInput:checked+.BulkActions_checkboxLabel .BulkActions_tickIcon {
+  background-color: theme.$blue;
+  border: 0;
+  fill: theme.$white;
+}
+
+.BulkActions_tickIcon {
+  border: 2px solid theme.$darkGrey200;
+  border-radius: 4px;
+  fill: transparent;
+  height: 18px;
+  pointer-events: none;
+  width: 18px;
+}
+
+.BulkActions_transitionGroup {
+  pointer-events: none;
+  transition: var(--transition150);
+  width: 0;
+}
+
+.BulkActions_transitionGroup__opened {
+  pointer-events: all;
+  width: 257px;
+}
+
+.BulkActions_transitionGroup__closed {
+  transition-delay: var(--transition);
+}
+
+.BulkActions_btnGroup {
+  display: flex;
+  flex-wrap: nowrap;
+  opacity: 0;
+  transition: var(--transition);
+
+  > * {
+    margin-left: 8px;
+  }
+}
+
+.BulkActions_btnGroup__opened {
+  opacity: 1;
+  transition-delay: var(--transition);
+}

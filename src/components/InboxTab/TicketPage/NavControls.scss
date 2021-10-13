@@ -1,0 +1,13 @@
+@use 'theme';
+
+.NavControls {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    display: flex;
+    padding: 0 0 0 30px;
+  }
+
+  > * {
+    margin: 0 2px;
+  }
+}

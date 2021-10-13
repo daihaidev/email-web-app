@@ -1,0 +1,50 @@
+@use 'theme';
+
+.Draft {
+  background-color: theme.$white;
+  border-radius: 6px;
+  padding: 0 28px;
+}
+
+.Draft_row {
+  display: flex;
+  margin-bottom: 24px;
+  padding-left: 82px;
+  position: relative;
+}
+
+.Draft_rowLabel {
+  color: theme.$darkGrey;
+  font-size: 14px;
+  font-weight: 400;
+  left: 0;
+  line-height: 36px;
+  position: absolute;
+  top: 0;
+}
+
+.Draft_rowInput {
+  width: 380px;
+}
+
+.Draft_createCustomer {
+  margin-left: 7px;
+}
+
+.Draft_message {
+  color: theme.$darkGrey;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin: 8px 0 28px;
+}
+
+.Draft_dropdown {
+  width: 100%;
+}
+
+.Draft_messageTicket {
+  color: theme.$blue;
+  font-weight: 700;
+}
+

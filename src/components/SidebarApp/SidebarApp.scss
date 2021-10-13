@@ -1,0 +1,74 @@
+@use 'theme';
+@use 'mixins';
+
+.SidebarApp {
+  position: relative;
+  padding-top: 1px;
+
+  &:last-of-type {
+    /* stylelint-disable */
+    &::after {
+      bottom: 0;
+      content: '';
+    }
+    /* stylelint-enable */
+  }
+
+  &::after,
+  &::before {
+    background-color: theme.$divider;
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  &::before {
+    top: 0;
+    content: '';
+  }
+}
+
+
+.SidebarApp_title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: theme.$lightGrey1000;
+  padding: 19px 0 5px;
+  cursor: pointer;
+  transition: var(--transition);
+
+  .SidebarApp__isCollapsed & {
+    padding-bottom: 16px;
+  }
+}
+
+.SidebarApp_content {
+  transition: var(--transition);
+  position: relative;
+
+  .SidebarApp__isCollapsed & {
+    transition-delay: var(--transition);
+  }
+}
+
+.SidebarApp_contentOpacity {
+  transition: var(--transition);
+
+  .SidebarApp__isCollapsed & {
+    opacity: 0;
+  }
+}
+
+.SidebarApp_contentClone {
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,25 @@
+@use 'theme';
+@use 'mixins';
+
+.AddButton {
+  height: 34px;
+  position: relative;
+  width: 34px;
+}
+
+.AddButton_bg {
+  cursor: pointer;
+  fill: theme.$blue;
+  transition: var(--transition);
+
+  :global(.uMouse) &:hover {
+    fill: theme.$blue800;
+  }
+}
+
+.AddButton_icon {
+  @include mixins.centerAbs;
+  fill: theme.$white;
+  pointer-events: none;
+  width: 22px;
+}

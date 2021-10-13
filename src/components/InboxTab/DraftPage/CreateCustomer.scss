@@ -1,0 +1,32 @@
+@use 'theme';
+
+.CreateCustomer {
+  border-left: 1px solid theme.$lightGrey;
+  padding: 0 40px 0 74px;
+  position: relative;
+  width: 442px;
+}
+
+.CreateCustomer_row {
+  margin-bottom: 12px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.CreateCustomer_label {
+  color: theme.$darkGrey;
+  font-size: 14px;
+  font-weight: 400;
+  left: -53px;
+  line-height: 36px;
+  position: absolute;
+}
+
+.CreateCustomer_close {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}

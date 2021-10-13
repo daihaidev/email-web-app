@@ -1,0 +1,52 @@
+@use 'theme';
+@use 'mixins';
+
+.ButtonWithIcon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 36px;
+
+  :global(.uTouchOptimized) & {
+    width: 44px;
+  }
+}
+
+.ButtonWithIcon__small {
+  width: 26px;
+
+  :global(.uTouchOptimized) & {
+    width: 30px;
+  }
+}
+
+.ButtonWithIcon_icon {
+  fill: theme.$buttonIcon;
+  transition: fill var(--transition);
+
+  :global(.uMouse) &:hover {
+    fill: theme.$buttonIconHover;
+  }
+
+}
+
+.ButtonWithIcon_icon__isActive {
+  fill: theme.$buttonIconHover;
+}
+
+.ButtonWithIcon_icon__isDisabled {
+  fill: theme.$buttonIconDisabled;
+}
+
+.ButtonWithIcon__large {
+  border-radius: 8px;
+  height: 40px;
+}
+
+.ButtonWithIcon_icon__primary {
+  fill: theme.$white;
+
+  :global(.uMouse) &:hover {
+    fill: theme.$white;
+  }
+}

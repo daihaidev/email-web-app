@@ -1,0 +1,9 @@
+log/**/*
+tmp/**
+.sass-cache/*
+node_modules/*
+dist/app.js
+dist/app.css
+.idea
+.history
+.DS_Store

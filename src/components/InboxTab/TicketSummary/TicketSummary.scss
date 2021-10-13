@@ -1,0 +1,558 @@
+@use 'theme';
+@use 'mixins';
+
+.TicketSummary {
+  @include theme.textFont;
+  background-color: theme.$lightGrey200;
+  border-radius: 6px;
+  color: theme.$darkGrey;
+  cursor: pointer;
+  font-size: 13px;
+  position: relative;
+  transition: var(--transition);
+
+  .TicketSummary__sm & {
+    font-size: 14px;
+  }
+}
+
+.TicketSummary_inner {
+  background-color: theme.$white;
+  border-radius: 6px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 9px 8px;
+
+  .TicketSummary__lg & {
+    flex-direction: row;
+    padding: 7px 8px;
+  }
+
+  .TicketSummary__md & {
+    padding: 8px;
+  }
+
+  .TicketSummary__sm & {
+    position: relative;
+    z-index: 1;
+  }
+
+  &.TicketSummary_inner__extended {
+    flex-direction: column;
+    padding: 9px 8px;
+  }
+
+  &.TicketSummary_inner__checked {
+    background-color: theme.$blue200;
+    box-shadow: 0 0 6px rgba(33, 53, 66, 0.2), 0 0 12px rgba(33, 53, 66, 0.2);
+  }
+
+  &.TicketSummary_inner__inProgress {
+    background-color: theme.$lightGrey400;
+    box-shadow: 0 0 6px rgba(33, 53, 66, 0.2), 0 0 12px rgba(33, 53, 66, 0.2);
+  }
+
+  &.TicketSummary_inner__actionsRevealedMobile {
+    right: 65px;
+  }
+
+  &.TicketSummary_inner__actionsHiddenMobile {
+    right: 0;
+  }
+
+  :global(.uMouse) &:hover {
+    box-shadow: 0 0 6px rgba(33, 53, 66, 0.2), 0 0 12px rgba(33, 53, 66, 0.2);
+  }
+}
+
+.TicketSummary_stretchableArea {
+  display: flex;
+  min-width: 0;
+  padding-bottom: 8px;
+
+  .TicketSummary__lg & {
+    padding-bottom: 0;
+  }
+
+  .TicketSummary__sm & {
+    flex-direction: column;
+  }
+
+  &.TicketSummary_stretchableArea__extended {
+    padding-bottom: 9px;
+  }
+}
+
+.TicketSummary_mobileTop {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .TicketSummary__sm & {
+    margin-bottom: 8px;
+  }
+}
+
+.TicketSummary_extendedModeContainer {
+  display: flex;
+  min-width: 0;
+
+  .TicketSummary__mdDown & {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.TicketSummary_extendedModeContainer__active {
+  flex-direction: column;
+}
+
+.TicketSummary_extendedModeContainerTop {
+  display: flex;
+}
+
+.TicketSummary_extendedModeContainerTop__active {
+  .TicketSummary__mdDown & {
+    margin-bottom: 5px;
+  }
+}
+
+.TicketSummary_extendedModeContainerBottom {
+  display: flex;
+  min-width: 0;
+
+  .TicketSummary__sm & {
+    flex-direction: column;
+  }
+}
+
+.TicketSummary_extendedModeContainerBottom__active {
+  flex-direction: column;
+}
+
+.TicketSummary_mobileMiddle {
+  display: flex;
+  min-width: 0;
+}
+
+.TicketSummary_mobileBottom {
+  display: flex;
+
+  .TicketSummary__sm & {
+    margin-top: 8px;
+    order: 1;
+  }
+
+  &.TicketSummary_mobileBottom__extended {
+    margin-top: 8px;
+    order: 1;
+  }
+}
+
+.TicketSummary_fixedArea {
+  border-top: 1px solid theme.$lightGrey;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding-top: 8px;
+
+  .TicketSummary__lg & {
+    border: 0;
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+
+  &.TicketSummary_fixedArea__extended {
+    border-top: 1px solid theme.$divider;
+    padding-top: 9px;
+  }
+}
+
+.TicketSummary_fixedAreaLeft {
+  display: flex;
+
+  .TicketSummary__sm & {
+    width: 100%;
+  }
+
+  &.TicketSummary_fixedAreaLeft__extended {
+    flex: 1;
+  }
+}
+
+.TicketSummary_mobileLeft {
+  display: flex;
+}
+
+.TicketSummary_mobileRight {
+  display: flex;
+}
+
+.TicketSummary__focus {
+  height: calc(100% - 13px);
+  left: -9px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.TicketSummary_viewFlag {
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 14px;
+}
+
+.TicketSummary_viewFlagIcon {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.TicketSummary_viewFlagIcon__view {
+  fill: theme.$lightGrey800;
+}
+
+.TicketSummary_viewFlagIcon__note {
+  fill: theme.$yellow;
+}
+
+.TicketSummary_viewFlagIcon__reply {
+  fill: theme.$red;
+}
+
+.TicketSummary_rating {
+  align-items: center;
+  display: flex;
+}
+
+.TicketSummary_ratingIcon {
+  margin-right: 7px;
+}
+
+.TicketSummary_ratingIcon__good {
+  fill: theme.$green;
+}
+
+.TicketSummary_ratingIcon__okay {
+  fill: theme.$darkGrey200;
+}
+
+.TicketSummary_ratingIcon__bad {
+  fill: theme.$red;
+}
+
+.TicketSummary_label:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.TicketSummary_label__fullWidth {
+  margin-bottom: 6px;
+}
+
+.TicketSummary_labelList {
+  display: flex;
+  margin-right: 6px;
+
+  .TicketSummary__sm & {
+    @include mixins.scrollbarHidden;
+    max-width: 100%;
+  }
+
+  &.TicketSummary_labelList__extended {
+    margin-right: 8px;
+  }
+}
+
+.TicketSummary_labelListInner {
+  display: flex;
+}
+
+.TicketSummary_labelListInner__fullWidth {
+  flex-wrap: wrap;
+}
+
+.TicketSummary_attachment {
+  fill: theme.$darkGrey400;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.TicketSummary_subject {
+  align-items: center;
+  display: flex;
+  margin-right: 6px;
+
+  span {
+    @include theme.textFontBold;
+    @include mixins.truncateText;
+  }
+}
+
+.TicketSummary_note {
+  fill: theme.$darkGrey400;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.TicketSummary_summary {
+  align-items: center;
+  display: flex;
+  margin-right: 6px;
+
+  span {
+    @include mixins.truncateText;
+  }
+}
+
+.TicketSummary_sentTime {
+  align-items: center;
+  display: flex;
+  margin-right: 6px;
+
+  span {
+    @include mixins.truncateText;
+  }
+}
+
+.TicketSummary_state {
+  align-items: center;
+  display: flex;
+  margin-right: 8px;
+}
+
+.TicketSummary_state__extended {
+  margin-right: 14px;
+}
+
+.TicketSummary_stateIcon {
+  fill: theme.$darkGrey400;
+}
+
+.TicketSummary_stateText {
+  margin-left: 3px;
+  white-space: nowrap;
+}
+
+.TicketSummary_user {
+  margin-right: 12px;
+}
+
+.TicketSummary_user__extended {
+  margin-right: 16px;
+}
+
+.TicketSummary_inbox {
+  align-items: center;
+  display: flex;
+  margin-right: 12px;
+  width: auto;
+
+  .TicketSummary__lg & {
+    width: 57px;
+  }
+}
+
+.TicketSummary_inbox__extended {
+  margin-right: 16px;
+}
+
+.TicketSummary_inboxIcon {
+  fill: theme.$darkGrey400;
+  margin-right: 4px;
+}
+
+.TicketSummary_number {
+  align-items: center;
+  display: flex;
+  margin-right: 13px;
+  order: -1;
+  white-space: nowrap;
+
+  .TicketSummary__lg & {
+    margin-right: 12px;
+    order: initial;
+  }
+
+  .TicketSummary__sm & {
+    margin-left: auto;
+    order: 0;
+  }
+
+  &.TicketSummary_number__extended {
+    margin-right: 16px;
+    min-width: 152px;
+    order: -1;
+
+    /* stylelint-disable */
+    .TicketSummary__sm & {
+      margin-left: auto;
+      min-width: 0;
+      order: 0;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.TicketSummary_replies {
+  align-items: center;
+  display: flex;
+  margin-right: 12px;
+  width: 40px;
+
+  .TicketSummary__sm & {
+    margin-right: 0;
+    order: 2;
+  }
+}
+
+.TicketSummary_repliesIcon {
+  fill: theme.$darkGrey400;
+  margin-right: 4px;
+}
+
+.TicketSummary_time {
+  align-items: center;
+  display: flex;
+  min-width: 0;
+  white-space: nowrap;
+
+  span {
+    @include mixins.truncateText;
+  }
+}
+
+.TicketSummary_content {
+  align-items: center;
+  display: flex;
+  margin-right: 16px;
+  min-width: 0;
+  white-space: nowrap;
+
+  span {
+    @include mixins.truncateText;
+  }
+
+  span:last-of-type {
+    flex: 1 0 0;
+  }
+
+  span:not(:last-of-type),
+  strong {
+    margin-right: 6px;
+  }
+}
+
+.TicketSummary_content__extended {
+  .TicketSummary__lg & {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .TicketSummary__sm & {
+    align-items: unset;
+  }
+}
+
+.TicketSummary_contentSummary {
+  @include mixins.truncateText;
+  display: inline;
+}
+
+.TicketSummary_extraActions {
+  align-items: center;
+  background-color: theme.$white;
+  border-bottom-right-radius: 6px;
+  bottom: 0;
+  box-shadow: -3px 0 6px -2px rgba(0, 0, 0, 0.3);
+  display: none;
+  height: 42px;
+  justify-content: center;
+  padding: 4px 8px;
+  position: absolute;
+  right: 0;
+
+  :global(.uMouse) .TicketSummary:hover & {
+    display: flex;
+  }
+
+  .TicketSummary__lg & {
+    border-top-right-radius: 6px;
+    height: 100%;
+  }
+
+  .TicketSummary__sm & {
+    background-color: theme.$lightGrey200;
+    border-top-right-radius: 6px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 4px 15px;
+    z-index: 0;
+  }
+}
+
+.TicketSummary_extraActions__extended {
+  .TicketSummary__md & {
+    height: 44px;
+  }
+}
+
+/* stylelint-disable */
+.TicketSummary_extraActionsItem {
+  .TicketSummary__md & {
+    &:not(:last-of-type) {
+      margin-right: 4px;
+    }
+  }
+}
+/* stylelint-enable */
+
+.TicketSummary_checkboxContainer {
+  @include mixins.centerAbs;
+  display: none;
+  height: 32px;
+  width: 32px;
+
+  :global(.uMouse) .TicketSummary:hover &,
+  .TicketSummary_checked & {
+    display: block;
+  }
+}
+
+.TicketSummary_customer {
+  display: flex;
+  margin-right: 16px;
+  min-width: 152px;
+}
+
+.TicketSummary_customerAvatarWrapper {
+  height: 26px;
+  position: relative;
+  width: 26px;
+
+  :global(.uTouchOptimized) & {
+    height: 28px;
+    width: 28px;
+  }
+}
+
+.TicketSummary_customerAvatarContainer {
+  @include mixins.centerAbs;
+  height: 26px;
+  width: 26px;
+
+  :global(.uMouse) .TicketSummary:hover &,
+  .TicketSummary_checked & {
+    display: none;
+  }
+
+  :global(.uTouchOptimized) & {
+    height: 28px;
+    width: 28px;
+  }
+}

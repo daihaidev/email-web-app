@@ -1,0 +1,59 @@
+@use 'theme';
+@use 'mixins';
+
+.DropdownItemsList {
+  max-width: 350px;
+  min-width: 120px;
+  padding: 8px;
+  position: relative;
+}
+
+.DropdownItemsList__fullWidth {
+  max-width: 100%;
+}
+
+.DropdownItemsList__withScroll {
+  margin-bottom: -8px;
+  margin-right: -8px;
+  margin-top: -8px;
+
+  &::before,
+  &::after {
+    @include mixins.pseudo;
+    background-position: center center;
+    background-size: cover;
+    height: 26px;
+    pointer-events: none;
+    width: 100%;
+    z-index: theme.$zIndexDropdown;
+  }
+
+  &::before {
+    background-image: linear-gradient(0deg,
+    rgba(255, 255, 255, 0) 3%,
+    rgba(255, 255, 255, 0.7) 100%);
+    border-radius: 12px 12px 0 0;
+    top: 0;
+  }
+
+  &::after {
+    background-image: linear-gradient(0deg,
+    rgba(255, 255, 255, 0.7) 3%,
+    rgba(255, 255, 255, 0) 100%);
+    border-radius: 0 0 12px 12px;
+    bottom: 0;
+  }
+}
+
+.DropdownItemsList_items {
+  position: relative;
+}
+
+.DropdownItemsList_items__withScroll {
+  @include mixins.withStyledScrollbar;
+  max-height: 265px;
+}
+
+.DropdownItemsList_items__horizontal {
+  display: flex;
+}

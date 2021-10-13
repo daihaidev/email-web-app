@@ -1,0 +1,9 @@
+@use 'reset';
+@use 'theme';
+@use 'utils';
+
+body {
+  @include theme.textFont;
+  background: theme.$white;
+  color: theme.$darkGrey;
+}

@@ -1,0 +1,36 @@
+@use 'theme';
+@use 'mixins';
+
+.TextEditable {
+  cursor: pointer;
+}
+
+.TextEditable__readOnly {
+  cursor: default;
+}
+
+.TextEditable_input {
+  border-color: theme.$white;
+  font-size: 19px;
+  height: 38px;
+  line-height: 23px;
+  padding: 8px 9px 7px;
+  pointer-events: none;
+
+  :global(.uMouse) &:hover {
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: theme.$lightGrey800;
+  }
+}
+
+.TextEditable_input__isEditable {
+  border-color: theme.$inputBorder;
+  pointer-events: all;
+
+  &:focus {
+    border-color: theme.$inputBorder;
+  }
+}

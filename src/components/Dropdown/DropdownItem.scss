@@ -1,0 +1,49 @@
+@use 'theme';
+@use 'mixins';
+
+.DropdownItem {
+  @include theme.textFont;
+  align-items: center;
+  border-radius: 6px;
+  color: theme.$darkGrey;
+  cursor: pointer;
+  display: flex;
+  font-size: 13px;
+  padding: 5px 8px;
+  position: relative;
+  transition: var(--transition);
+
+  :global(.uTouchOptimized) & {
+    align-items: center;
+    font-size: 14px;
+    height: 44px;
+    line-height: 21px;
+  }
+
+  span {
+    @include mixins.truncateText;
+    min-width: 0;
+  }
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+  }
+}
+
+.DropdownItem__submenu {
+  display: flex;
+  @media (min-width: theme.$smMin) {
+    padding: 0;
+
+    :global(.uTouchOptimized) & {
+      padding: 0;
+    }
+  }
+}
+
+.DropdownItem_submenuIcon {
+  fill: theme.$darkGrey400;
+  margin-bottom: -2px;
+  margin-left: 15px;
+  transform: rotate(-90deg);
+}

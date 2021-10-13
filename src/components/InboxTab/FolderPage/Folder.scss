@@ -1,0 +1,55 @@
+@use 'theme';
+@use 'mixins';
+
+.Folder {
+  @include theme.textFont;
+  border-radius: 6px;
+  color: theme.$darkGrey;
+  cursor: pointer;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  padding: 5px 8px;
+  position: relative;
+  transition: var(--transition);
+
+  :global(.uMouse) &:hover {
+    background-color: theme.$lightGrey200;
+  }
+
+  :global(.uTouchOptimized) & {
+    font-size: 14px;
+    line-height: 21px;
+    padding: 12px 8px 11px;
+  }
+}
+
+.Folder__highlighted {
+  color: theme.$red;
+  font-weight: 700;
+}
+
+.Folder__notAnimated {
+  transition: none;
+}
+
+.Folder__focus {
+  height: calc(100% - 13px);
+  left: -6px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.Folder__active {
+  color: theme.$blue;
+  pointer-events: none;
+
+  &.Folder__highlighted {
+    color: theme.$red;
+  }
+}
+
+.Folder_name {
+  padding-right: 10px;
+}

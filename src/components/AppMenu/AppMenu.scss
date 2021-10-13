@@ -1,0 +1,182 @@
+@use 'theme';
+@use 'mixins';
+
+.AppMenu {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: theme.$zIndexAppMenu;
+  @media (min-width: theme.$mdMin) {
+    display: none;
+  }
+}
+
+.AppMenu_menu {
+  background: theme.$white;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: translate(-100%, 0);
+  transition: var(--transition200);
+  width: 256px;
+
+  .AppMenu__isActive & {
+    transform: translate(0, 0);
+  }
+}
+
+.AppMenu_button {
+  left: 4px;
+  position: fixed;
+  top: 4px;
+
+  @media (min-width: theme.$smMin) {
+    left: 12px;
+    top: 12px;
+
+    :global(.uTouchOptimized) & {
+      left: 8px;
+      top: 8px;
+    }
+  }
+}
+
+.AppMenu_button__isHidden {
+  display: none;
+  @media (min-width: theme.$smMin) {
+    display: block;
+  }
+}
+
+.AppMenu_button__hasNotifications {
+  &::before {
+    @include mixins.pseudo();
+    background: theme.$red;
+    border: 3px solid theme.$white;
+    border-radius: 50%;
+    bottom: 2px;
+    height: 14px;
+    position: absolute;
+    right: 2px;
+    width: 14px;
+  }
+}
+
+.AppMenu_overlay {
+  background-color: rgba(theme.$darkGrey600, 90%);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: var(--transition200);
+
+  .AppMenu__isActive & {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.AppMenu_logo {
+  left: 13px;
+  position: absolute;
+  top: 13px;
+}
+
+.AppMenu_logoIcon {
+  fill: theme.$blue;
+  width: 24px;
+}
+
+.AppMenu_navItem {
+  color: theme.$darkGrey600;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.19px;
+  line-height: 26px;
+  padding: 14px 0 14px 49px;
+  position: relative;
+  width: 100%;
+}
+
+.AppMenu_navItemIcon {
+  fill: theme.$darkGrey600;
+  margin-right: 14px;
+
+  .AppMenu_navItem__isActive & {
+    fill: theme.$blue;
+  }
+}
+
+.AppMenu_navItem__isActive {
+  color: theme.$blue;
+  overflow: hidden;
+
+  &::before {
+    background: theme.$blue;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 50px;
+    left: -39px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 50px;
+  }
+}
+
+.AppMenu_user {
+  height: 62px;
+  margin: 0 auto 22px;
+  width: 62px;
+}
+
+.AppMenu_statusSwitcher {
+  margin: 0 auto 22px;
+  width: 152px;
+}
+
+.AppMenu_notification {
+  fill: theme.$buttonIcon;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+
+  &.AppMenu_notification__hasNotification {
+    fill: theme.$red;
+  }
+}
+
+.AppMenu_scroll {
+  @include mixins.withStyledScrollbar;
+  height: 100%;
+  padding: 28px 0 50px;
+  position: relative;
+}
+
+.AppMenu_bottom {
+  background: theme.$white;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 16px 20px;
+  position: absolute;
+  right: 0;
+}
+
+.AppMenu_bottomLink {
+  color: theme.$darkGrey600;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.19px;
+  line-height: 19px;
+  text-align: center;
+  text-decoration: none;
+}

@@ -1,0 +1,68 @@
+@use 'theme';
+
+.AvatarWithStatus {
+  position: relative;
+
+  :global(.uTouchOptimized) & {
+    padding: 4px;
+  }
+}
+
+.AvatarWithStatus_status {
+  background-color: theme.$lightGrey800;
+  border: 3px solid theme.$white;
+  border-radius: 6px;
+  height: 14px;
+  left: 27px;
+  position: absolute;
+  top: 27px;
+  width: 14px;
+
+  :global(.uTouchOptimized) & {
+    left: 31px;
+    top: 31px;
+  }
+
+  .AvatarWithStatus__isActive & {
+    background-color: theme.$green;
+  }
+
+  .AvatarWithStatus__xsmall & {
+    border-radius: 5px;
+    height: 12px;
+    left: 18px;
+    top: 18px;
+    width: 12px;
+  }
+
+  .AvatarWithStatus__large & {
+    border-radius: 50%;
+    height: 16px;
+    left: 51px;
+    top: 49px;
+    width: 16px;
+  }
+}
+
+.AvatarWithStatus_avatar {
+  border-radius: 8px;
+  transition: var(--transition);
+
+  .AvatarWithStatus__isButton & {
+    cursor: pointer;
+
+    /* stylelint-disable */
+    :global(.uMouse) &:hover {
+      box-shadow: 0 0 4px rgba(theme.$darkGrey, 65%);
+    }
+    /* stylelint-enable */
+  }
+
+  /*.AvatarWithStatus__isActive & {
+    background-color: theme.$green;
+  }*/
+
+  .AvatarWithStatus__xsmall {
+    border-radius: 6px;
+  }
+}

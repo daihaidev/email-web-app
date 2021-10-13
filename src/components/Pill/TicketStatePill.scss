@@ -1,0 +1,58 @@
+@use 'theme';
+@use 'mixins';
+
+.TicketStatePill {
+  border: 1px solid theme.$lightGrey800;
+  border-radius: 6px;
+  color: theme.$darkGrey;
+  display: flex;
+  font-size: 13px;
+  font-weight: 400;
+  height: 26px;
+  line-height: 24px;
+  overflow: hidden;
+  padding-right: 8px;
+}
+
+.TicketStatePill_snoozeTime {
+  margin-left: 3px;
+}
+
+.TicketStatePill__snoozed {
+  border-color: theme.$teal;
+}
+
+.TicketStatePill__open {
+  border-color: theme.$green;
+}
+
+.TicketStatePill__hold {
+  border-color: theme.$purple;
+}
+
+.TicketStatePill_iconContainer {
+  align-items: center;
+  background-color: theme.$lightGrey800;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  margin-right: 8px;
+  width: 26px;
+
+  .TicketStatePill__snoozed & {
+    background-color: theme.$teal;
+  }
+
+  .TicketStatePill__open & {
+    background-color: theme.$green;
+  }
+
+  .TicketStatePill__hold & {
+    background-color: theme.$purple;
+  }
+}
+
+.TicketStatePill_icon {
+  fill: theme.$white;
+}
+

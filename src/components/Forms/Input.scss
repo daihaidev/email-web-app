@@ -1,0 +1,17 @@
+@use 'theme';
+@use 'mixins';
+
+.Input {
+  @include mixins.inputField;
+  height: 36px;
+  padding: 0 12px;
+
+  :global(.uTouchOptimized) & {
+    height: 44px;
+  }
+}
+
+.Input__disabled {
+  color: theme.$inputBorder;
+  pointer-events: none;
+}

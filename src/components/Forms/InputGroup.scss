@@ -1,0 +1,28 @@
+@use 'theme';
+
+.InputGroup_header {
+  align-items: center;
+  display: flex;
+  padding-bottom: 1px;
+}
+
+.InputGroup_label {
+  color: theme.$darkGrey;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.InputGroup_icon {
+  fill: theme.$darkGrey400;
+  margin-right: 8px;
+}
+
+.InputGroup_field {
+  margin-top: 4px;
+}
+
+.InputGroup_headerSlot {
+  display: flex;
+  margin-left: auto;
+}

@@ -1,0 +1,115 @@
+// COLORS
+
+// primary colors
+$blue: #0291d9;
+$white: #ffffff;
+$lightGrey: #e2e6e9;
+$darkGrey: #213542;
+
+// secondary colors
+$purple: #aa2eb3;
+$teal: #23bbcc;
+$yellow: #ffb800;
+$orange: #ff5200;
+
+// extended colors
+$red: #eb3143;
+$green: #10b06e;
+
+$darkGrey200: #637887;
+$darkGrey400: #506472;
+$darkGrey600: #3d505f;
+
+$lightGrey100: #f7f9fa;
+$lightGrey200: #f0f3f5;
+$lightGrey300: #e6ecf0;
+$lightGrey400: #d4d9de;
+$lightGrey500: #c5cdd3;
+$lightGrey800: #9aa7b2;
+$lightGrey1000: #7d8e9c;
+
+$blue200: #e1f2fc;
+$blue700: #007fc5;
+$blue800: #006eb3;
+
+$lightBlue200: #e0f4fd;
+$lightBlue300: #b1e1f9;
+
+$green200: #e2f4ec;
+
+$red200: #fce6e8;
+$red600: #d62032;
+
+$orange200: #ffedde;
+
+$inputBorder: $lightGrey500;
+
+// FONTS
+$textFontFamily: 'Roboto', helvetica, arial, sans-serif;
+$monoFontFamily: 'Roboto Mono', Monaco, Menlo, Consolas, 'Courier New',
+  monospace;
+
+@mixin textFont() {
+  font-family: $textFontFamily;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin textFontBold() {
+  font-family: $textFontFamily;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin monoFont() {
+  font-family: $monoFontFamily;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin monoFontBold() {
+  font-family: $monoFontFamily;
+  font-style: normal;
+  font-weight: 700;
+}
+
+// Buttons
+$buttonIcon: $darkGrey400;
+$buttonIconHover: $darkGrey;
+$buttonIconDisabled: $lightGrey800;
+
+// UI
+$divider: $lightGrey400;
+$dividerDark: $lightGrey500;
+
+// z-index (ascending order)
+$zIndexDropdown: 1;
+$zIndexScrollOverflow: 1;
+$zIndexMessageHover: 1;
+$zIndexTicketAttributeHeader: 1;
+$zIndexReplyBox: 2;
+$zIndexTicketModalHeader: 2;
+$zIndexTicketAttributeHeaderSticky: 3;
+$zIndexHeader: 4;
+$zIndexAppMenu: 5;
+$zIndexSecondaryNav: 5;
+$zIndexSearch: 6;
+$zIndexModal: 999;
+
+$mdMin: 992px;
+$smMin: 768px;
+
+// Shadows
+$shadowInner: inset 0 0 6px rgba($darkGrey, 0.12), inset 0 0 4px rgba($darkGrey, 0.16);
+$shadow2: 0 0 2px rgba($darkGrey, 0.28), 0 0 10px rgba($darkGrey, 0.16);
+$shadow10: 0 0 10px rgba($darkGrey, 0.16), 0 0 4px rgba($darkGrey, 0.28);
+$shadow16: 0 0 16px rgba($darkGrey, 0.12), 0 0 6px rgba($darkGrey, 0.22);
+$shadow24: 0 0 24px rgba($darkGrey, 0.1), 0 0 10px rgba($darkGrey, 0.18);
+$shadow40: 0 0 40px rgba($darkGrey, 0.1), 0 0 12px rgba($darkGrey, 0.18);
+$shadow100: 0 0 100px rgba($darkGrey, 0.1), 0 0 16px rgba($darkGrey, 0.16);
+
+$shadowGradientBottom: linear-gradient(0, rgba(33, 53, 66, 0.1) 0%, rgba(33, 53, 66, 0) 50%), linear-gradient(0, rgba(33, 53, 66, 0.03) 0%, rgba(33, 53, 66, 0) 100%);
+$shadowGradientTop: linear-gradient(180deg, rgba(33, 53, 66, 0.1) 0%, rgba(33, 53, 66, 0) 50%), linear-gradient(180deg, rgba(33, 53, 66, 0.03) 0%, rgba(33, 53, 66, 0) 100%);;
+
+
+

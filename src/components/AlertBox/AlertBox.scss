@@ -1,0 +1,72 @@
+@use 'theme';
+@use 'mixins';
+
+.AlertBox {
+  position: relative;
+
+  a {
+    font-weight: 500;
+  }
+}
+
+.AlertBox__urgent {
+  @include mixins.urgent();
+}
+
+.AlertBox__important {
+  @include mixins.important();
+}
+
+.AlertBox__success {
+  @include mixins.success();
+}
+
+.AlertBox__notice {
+  @include mixins.notice();
+}
+
+.AlertBox_close {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+
+.AlertBox_button {
+  background-color: transparent;
+
+  :global(.uMouse) &:hover {
+    background-color: transparent;
+  }
+}
+
+.AlertBox_buttonIcon__urgent {
+  fill: theme.$red;
+
+  :global(.uMouse) &:hover {
+    fill: theme.$red;
+  }
+}
+
+.AlertBox_buttonIcon__important {
+  fill: theme.$orange;
+
+  :global(.uMouse) &:hover {
+    fill: theme.$orange;
+  }
+}
+
+.AlertBox_buttonIcon__success {
+  fill: theme.$green;
+
+  :global(.uMouse) &:hover {
+    fill: theme.$green;
+  }
+}
+
+.AlertBox_buttonIcon__notice {
+  fill: theme.$blue;
+
+  :global(.uMouse) &:hover {
+    fill: theme.$blue;
+  }
+}

@@ -1,0 +1,19 @@
+@use 'theme';
+
+.CustomerSearch_customer {
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  padding: 6px 8px;
+  transition: background-color var(--transition200);
+
+  &:hover {
+    background-color: theme.$lightBlue200;
+  }
+}
+
+.CustomerSearch_customerName {
+  font-weight: 700;
+  margin: 0 8px;
+}

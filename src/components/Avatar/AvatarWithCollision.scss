@@ -1,0 +1,90 @@
+@use 'theme';
+@use 'mixins';
+
+.AvatarWithCollision {
+  overflow: hidden;
+  position: relative;
+}
+
+.AvatarWithCollision__isAnimated {
+  &::before {
+    animation: avatarAnimation cubic-bezier(0, 0.31, 0, 1) 2.25s infinite;
+    border-top: 1px solid;
+    bottom: -55%;
+    content: '';
+    display: block;
+    height: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(0, 0) rotate(-45deg);
+    transform-origin: bottom left;
+    width: 190%;
+  }
+}
+
+.AvatarWithCollision__view {
+  &::before {
+    border-color: theme.$lightGrey800;
+  }
+}
+
+.AvatarWithCollision__reply {
+  &::before {
+    border-color: theme.$red;
+  }
+}
+
+.AvatarWithCollision__note {
+  &::before {
+    border-color: theme.$yellow;
+  }
+}
+
+@keyframes avatarAnimation {
+  0% {
+    border-top-width: 1px;
+    opacity: 1;
+  }
+
+  55%,
+  100% {
+    border-top-width: 15px;
+    opacity: 0;
+  }
+}
+
+.AvatarWithCollision__xsmall {
+  border-radius: 6px;
+}
+
+.AvatarWithCollision__small {
+  border-radius: 8px;
+}
+
+.AvatarWithCollision_activity {
+  bottom: -22px;
+  box-shadow: 0 0 0 3px theme.$white;
+  height: 30px;
+  position: absolute;
+  right: -16px;
+  transform: rotate(45deg);
+  width: 30px;
+
+  .AvatarWithCollision__xsmall & {
+    bottom: -25px;
+    box-shadow: 0 0 0 2px theme.$white;
+    right: -16px;
+  }
+
+  .AvatarWithCollision__view & {
+    background-color: theme.$lightGrey800;
+  }
+
+  .AvatarWithCollision__reply & {
+    background-color: theme.$red;
+  }
+
+  .AvatarWithCollision__note & {
+    background-color: theme.$yellow;
+  }
+}
